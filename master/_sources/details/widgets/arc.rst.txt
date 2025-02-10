@@ -190,7 +190,7 @@ API
 
 :ref:`lv_types_h`
 
-:ref:`lv_arc_h`
-
 :ref:`lv_observer_h`
+
+:ref:`lv_arc_h`
 

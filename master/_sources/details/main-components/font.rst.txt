@@ -562,7 +562,7 @@ API
 
 :ref:`lv_types_h`
 
-:ref:`lv_font_fmt_txt_h`
-
 :ref:`lv_font_manager_h`
+
+:ref:`lv_font_fmt_txt_h`
 

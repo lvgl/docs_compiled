@@ -102,7 +102,7 @@ API
 
 :ref:`lv_tileview_h`
 
-:ref:`lv_types_h`
-
 :ref:`lv_api_map_v8_h`
+
+:ref:`lv_types_h`
 

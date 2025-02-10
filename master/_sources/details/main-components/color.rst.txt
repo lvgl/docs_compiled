@@ -156,11 +156,11 @@ API
 
 :ref:`lv_color_op_h`
 
-:ref:`lv_types_h`
+:ref:`lv_blend_arm2d_h`
 
 :ref:`lv_blend_neon_h`
 
-:ref:`lv_blend_arm2d_h`
+:ref:`lv_types_h`
 
 :ref:`lv_color_h`
 
