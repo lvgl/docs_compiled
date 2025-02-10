@@ -1,0 +1,10 @@
+.. _encodings_h:
+
+===========
+encodings.h
+===========
+
+
+.. doxygenfile:: encodings.h
+    :project: lvgl
+

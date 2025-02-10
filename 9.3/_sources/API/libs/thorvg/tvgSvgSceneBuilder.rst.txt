@@ -1,0 +1,10 @@
+.. _tvgSvgSceneBuilder_h:
+
+====================
+tvgSvgSceneBuilder.h
+====================
+
+
+.. doxygenfile:: tvgSvgSceneBuilder.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _filereadstream:
+
+================
+filereadstream.h
+================
+
+
+.. doxygenfile:: filereadstream.h
+    :project: lvgl
+

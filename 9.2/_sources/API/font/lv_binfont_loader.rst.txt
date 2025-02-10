@@ -1,0 +1,10 @@
+.. _lv_binfont_loader:
+
+===================
+lv_binfont_loader.h
+===================
+
+
+.. doxygenfile:: lv_binfont_loader.h
+    :project: lvgl
+

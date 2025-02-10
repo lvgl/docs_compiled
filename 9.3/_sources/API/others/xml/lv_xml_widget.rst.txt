@@ -1,0 +1,10 @@
+.. _lv_xml_widget_h:
+
+===============
+lv_xml_widget.h
+===============
+
+
+.. doxygenfile:: lv_xml_widget.h
+    :project: lvgl
+

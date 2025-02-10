@@ -1,0 +1,10 @@
+.. _tvgSvgCssStyle_h:
+
+================
+tvgSvgCssStyle.h
+================
+
+
+.. doxygenfile:: tvgSvgCssStyle.h
+    :project: lvgl
+

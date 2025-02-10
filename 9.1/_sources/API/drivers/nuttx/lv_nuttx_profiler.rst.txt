@@ -1,0 +1,10 @@
+.. _lv_nuttx_profiler:
+
+===================
+lv_nuttx_profiler.h
+===================
+
+
+.. doxygenfile:: lv_nuttx_profiler.h
+    :project: lvgl
+

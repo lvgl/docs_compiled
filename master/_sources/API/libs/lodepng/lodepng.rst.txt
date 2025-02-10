@@ -1,0 +1,10 @@
+.. _lodepng_h:
+
+=========
+lodepng.h
+=========
+
+
+.. doxygenfile:: lodepng.h
+    :project: lvgl
+

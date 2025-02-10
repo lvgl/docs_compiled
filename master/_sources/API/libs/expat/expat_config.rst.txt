@@ -1,0 +1,10 @@
+.. _expat_config_h:
+
+==============
+expat_config.h
+==============
+
+
+.. doxygenfile:: expat_config.h
+    :project: lvgl
+

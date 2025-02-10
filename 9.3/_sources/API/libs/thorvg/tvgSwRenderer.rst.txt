@@ -1,0 +1,10 @@
+.. _tvgSwRenderer_h:
+
+===============
+tvgSwRenderer.h
+===============
+
+
+.. doxygenfile:: tvgSwRenderer.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _tvgLottieModifier_h:
+
+===================
+tvgLottieModifier.h
+===================
+
+
+.. doxygenfile:: tvgLottieModifier.h
+    :project: lvgl
+

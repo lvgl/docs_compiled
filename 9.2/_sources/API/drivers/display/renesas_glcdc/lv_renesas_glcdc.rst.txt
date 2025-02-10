@@ -1,0 +1,10 @@
+.. _lv_renesas_glcdc:
+
+==================
+lv_renesas_glcdc.h
+==================
+
+
+.. doxygenfile:: lv_renesas_glcdc.h
+    :project: lvgl
+

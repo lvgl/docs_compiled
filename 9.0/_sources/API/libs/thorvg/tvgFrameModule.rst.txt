@@ -1,0 +1,10 @@
+.. _tvgFrameModule:
+
+================
+tvgFrameModule.h
+================
+
+
+.. doxygenfile:: tvgFrameModule.h
+    :project: lvgl
+

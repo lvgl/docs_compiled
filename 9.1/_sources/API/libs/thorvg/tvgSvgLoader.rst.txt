@@ -1,0 +1,10 @@
+.. _tvgSvgLoader:
+
+==============
+tvgSvgLoader.h
+==============
+
+
+.. doxygenfile:: tvgSvgLoader.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_anim_h:
+
+=========
+lv_anim.h
+=========
+
+
+.. doxygenfile:: lv_anim.h
+    :project: lvgl
+

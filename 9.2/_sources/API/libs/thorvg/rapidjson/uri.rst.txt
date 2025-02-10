@@ -1,0 +1,10 @@
+.. _uri:
+
+=====
+uri.h
+=====
+
+
+.. doxygenfile:: uri.h
+    :project: lvgl
+

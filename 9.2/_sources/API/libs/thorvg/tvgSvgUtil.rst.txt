@@ -1,0 +1,10 @@
+.. _tvgSvgUtil:
+
+============
+tvgSvgUtil.h
+============
+
+
+.. doxygenfile:: tvgSvgUtil.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _tvgTaskScheduler:
+
+==================
+tvgTaskScheduler.h
+==================
+
+
+.. doxygenfile:: tvgTaskScheduler.h
+    :project: lvgl
+

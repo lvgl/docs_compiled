@@ -1,0 +1,10 @@
+.. _lv_lru_h:
+
+========
+lv_lru.h
+========
+
+
+.. doxygenfile:: lv_lru.h
+    :project: lvgl
+

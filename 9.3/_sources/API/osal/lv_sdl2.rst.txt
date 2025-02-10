@@ -1,0 +1,10 @@
+.. _lv_sdl2_h:
+
+=========
+lv_sdl2.h
+=========
+
+
+.. doxygenfile:: lv_sdl2.h
+    :project: lvgl
+

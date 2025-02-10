@@ -1,0 +1,10 @@
+.. _lv_buttonmatrix_h:
+
+=================
+lv_buttonmatrix.h
+=================
+
+
+.. doxygenfile:: lv_buttonmatrix.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _xmlrole_h:
+
+=========
+xmlrole.h
+=========
+
+
+.. doxygenfile:: xmlrole.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_vg_lite_decoder:
+
+====================
+lv_vg_lite_decoder.h
+====================
+
+
+.. doxygenfile:: lv_vg_lite_decoder.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_api_map_v8:
+
+===============
+lv_api_map_v8.h
+===============
+
+
+.. doxygenfile:: lv_api_map_v8.h
+    :project: lvgl
+

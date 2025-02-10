@@ -1,0 +1,10 @@
+.. _lv_async_h:
+
+==========
+lv_async.h
+==========
+
+
+.. doxygenfile:: lv_async.h
+    :project: lvgl
+

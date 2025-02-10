@@ -1,0 +1,10 @@
+:link_to_translation:`zh_CN:[中文]`	
+
+=======
+Touchpad
+=======
+
+.. toctree::
+    :maxdepth: 2
+
+    ft6x36

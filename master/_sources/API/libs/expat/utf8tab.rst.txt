@@ -1,0 +1,10 @@
+.. _utf8tab_h:
+
+=========
+utf8tab.h
+=========
+
+
+.. doxygenfile:: utf8tab.h
+    :project: lvgl
+

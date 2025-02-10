@@ -1,0 +1,10 @@
+.. _tvgCompressor:
+
+===============
+tvgCompressor.h
+===============
+
+
+.. doxygenfile:: tvgCompressor.h
+    :project: lvgl
+

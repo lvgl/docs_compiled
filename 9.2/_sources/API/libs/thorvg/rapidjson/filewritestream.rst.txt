@@ -1,0 +1,10 @@
+.. _filewritestream:
+
+=================
+filewritestream.h
+=================
+
+
+.. doxygenfile:: filewritestream.h
+    :project: lvgl
+

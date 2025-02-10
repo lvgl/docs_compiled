@@ -1,0 +1,10 @@
+.. _lv_font_manager_recycle_h:
+
+=========================
+lv_font_manager_recycle.h
+=========================
+
+
+.. doxygenfile:: lv_font_manager_recycle.h
+    :project: lvgl
+

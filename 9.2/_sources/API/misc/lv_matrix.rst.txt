@@ -1,0 +1,10 @@
+.. _lv_matrix:
+
+===========
+lv_matrix.h
+===========
+
+
+.. doxygenfile:: lv_matrix.h
+    :project: lvgl
+

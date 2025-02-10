@@ -1,0 +1,10 @@
+.. _lv_indev_gesture_h:
+
+==================
+lv_indev_gesture.h
+==================
+
+
+.. doxygenfile:: lv_indev_gesture.h
+    :project: lvgl
+

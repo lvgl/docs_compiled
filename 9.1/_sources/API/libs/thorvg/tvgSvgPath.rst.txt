@@ -1,0 +1,10 @@
+.. _tvgSvgPath:
+
+============
+tvgSvgPath.h
+============
+
+
+.. doxygenfile:: tvgSvgPath.h
+    :project: lvgl
+

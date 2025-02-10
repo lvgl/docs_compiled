@@ -1,0 +1,10 @@
+.. _error_h:
+
+=======
+error.h
+=======
+
+
+.. doxygenfile:: error.h
+    :project: lvgl
+

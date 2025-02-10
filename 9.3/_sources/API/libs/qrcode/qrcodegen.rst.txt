@@ -1,0 +1,10 @@
+.. _qrcodegen_h:
+
+===========
+qrcodegen.h
+===========
+
+
+.. doxygenfile:: qrcodegen.h
+    :project: lvgl
+

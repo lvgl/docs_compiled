@@ -1,0 +1,10 @@
+.. _iasciitab_h:
+
+===========
+iasciitab.h
+===========
+
+
+.. doxygenfile:: iasciitab.h
+    :project: lvgl
+

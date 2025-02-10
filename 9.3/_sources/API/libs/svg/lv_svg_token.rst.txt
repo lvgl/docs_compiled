@@ -1,0 +1,10 @@
+.. _lv_svg_token_h:
+
+==============
+lv_svg_token.h
+==============
+
+
+.. doxygenfile:: lv_svg_token.h
+    :project: lvgl
+

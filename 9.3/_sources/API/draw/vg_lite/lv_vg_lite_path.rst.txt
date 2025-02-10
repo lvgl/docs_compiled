@@ -1,0 +1,10 @@
+.. _lv_vg_lite_path_h:
+
+=================
+lv_vg_lite_path.h
+=================
+
+
+.. doxygenfile:: lv_vg_lite_path.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _tvgSwCommon:
+
+=============
+tvgSwCommon.h
+=============
+
+
+.. doxygenfile:: tvgSwCommon.h
+    :project: lvgl
+

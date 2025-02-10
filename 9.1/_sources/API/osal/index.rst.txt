@@ -1,0 +1,16 @@
+====
+osal
+====
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_windows
+    lv_os_none
+    lv_freertos
+    lv_cmsis_rtos2
+    lv_pthread
+    lv_rtthread
+    lv_os
+

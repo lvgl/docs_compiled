@@ -1,0 +1,10 @@
+.. _allocators_h:
+
+============
+allocators.h
+============
+
+
+.. doxygenfile:: allocators.h
+    :project: lvgl
+

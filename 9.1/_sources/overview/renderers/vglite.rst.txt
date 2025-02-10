@@ -1,0 +1,19 @@
+:link_to_translation:`zh_CN:[中文]`	
+
+==============
+NXP VGLite GPU
+==============
+
+API
+---
+
+:ref:`lv_draw_vglite`
+
+:ref:`lv_draw_vglite_arc`
+
+:ref:`lv_draw_vglite_blend`
+
+:ref:`lv_draw_vglite_line`
+
+:ref:`lv_draw_vglite_rect`
+

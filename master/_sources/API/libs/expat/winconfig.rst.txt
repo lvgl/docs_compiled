@@ -1,0 +1,10 @@
+.. _winconfig_h:
+
+===========
+winconfig.h
+===========
+
+
+.. doxygenfile:: winconfig.h
+    :project: lvgl
+

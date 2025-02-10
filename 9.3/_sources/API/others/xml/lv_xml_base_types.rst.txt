@@ -1,0 +1,10 @@
+.. _lv_xml_base_types_h:
+
+===================
+lv_xml_base_types.h
+===================
+
+
+.. doxygenfile:: lv_xml_base_types.h
+    :project: lvgl
+

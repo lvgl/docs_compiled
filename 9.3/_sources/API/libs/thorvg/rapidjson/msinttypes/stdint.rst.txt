@@ -1,0 +1,10 @@
+.. _stdint_h:
+
+========
+stdint.h
+========
+
+
+.. doxygenfile:: stdint.h
+    :project: lvgl
+

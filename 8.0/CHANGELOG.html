@@ -1,0 +1,2221 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Changelog &mdash; LVGL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/fontawesome.min.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://docs.lvgl.io/v8.0/en/html/CHANGELOG.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Roadmap" href="ROADMAP.html" />
+    <link rel="prev" title="Contributing" href="CONTRIBUTING.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78811084-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', 'UA-78811084-3', { 'anonymize_ip': true });
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html">
+          
+
+          
+            
+            <img src="_static/logo_lvgl.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                8.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro/index.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#key-features">Key features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#repository-layout">Repository layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#release-policy">Release policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#release-cycle">Release cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#branches">Branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#changelog">Changelog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#version-support">Version support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="intro/index.html#faq">FAQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#where-can-i-ask-questions">Where can I ask questions?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#is-my-mcu-hardware-supported">Is my MCU/hardware supported?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#is-my-display-supported">Is my display supported?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#nothing-happens-my-display-driver-is-not-called-what-have-i-missed">Nothing happens, my display driver is not called. What have I missed?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#why-is-the-display-driver-called-only-once-only-the-upper-part-of-the-display-is-refreshed">Why is the display driver called only once? Only the upper part of the display is refreshed.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#why-do-i-see-only-garbage-on-the-screen">Why do I see only garbage on the screen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#why-i-see-nonsense-colors-on-the-screen">Why I see nonsense colors on the screen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#how-to-speed-up-my-ui">How to speed up my UI?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#how-to-reduce-flash-rom-usage">How to reduce flash/ROM usage?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#how-to-reduce-the-ram-usage">How to reduce the RAM usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="intro/index.html#how-to-work-with-an-operating-system">How to work with an operating system?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="get-started/index.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="get-started/quick-overview.html">Quick overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/quick-overview.html#get-started-in-a-simulator">Get started in a simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/quick-overview.html#add-lvgl-into-your-project">Add LVGL into your project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/quick-overview.html#learn-the-basics">Learn the basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#widgets">Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#parts">Parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#states">States</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#styles">Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#themes">Themes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/quick-overview.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/quick-overview.html#id1">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/quick-overview.html#micropython">Micropython</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/pc-simulator.html">Simulator on PC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/pc-simulator.html#select-an-ide">Select an IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/pc-simulator.html#set-up-eclipse-cdt">Set-up Eclipse CDT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/pc-simulator.html#install-eclipse-cdt">Install Eclipse CDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/pc-simulator.html#install-sdl-2">Install SDL 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/pc-simulator.html#pre-configured-project">Pre-configured project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/pc-simulator.html#add-the-pre-configured-project-to-eclipse-cdt">Add the pre-configured project to Eclipse CDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/pc-simulator.html#compile-and-run">Compile and Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/stm32.html">STM32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/nxp.html">NXP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nxp.html#creating-new-project-with-lvgl">Creating new project with LVGL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nxp.html#adding-hw-acceleration-for-nxp-imx-rt-platforms-using-pxp-pixel-pipeline-engine-for-existing-projects">Adding HW acceleration for NXP iMX RT platforms using PXP (PiXel Pipeline) engine for existing projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nxp.html#features-supported">Features supported:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nxp.html#basic-configuration">Basic configuration:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nxp.html#basic-initialization">Basic initialization:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nxp.html#project-setup">Project setup:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nxp.html#advanced-configuration">Advanced configuration:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/espressif.html">Espressif (ESP32)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/espressif.html#get-the-lvgl-demo-project-for-esp32">Get the LVGL demo project for ESP32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/espressif.html#use-lvgl-in-your-esp32-project">Use LVGL in your ESP32 project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/espressif.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/espressif.html#get-lvgl">Get LVGL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/espressif.html#use-lvgl-esp32-drivers-in-your-project">Use lvgl_esp32_drivers in your project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/espressif.html#support-for-esp32-s2">Support for ESP32-S2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/arduino.html">Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#get-the-lvgl-ardunio-library">Get the LVGL Ardunio library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#set-up-drivers">Set up drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#configure-lvgl">Configure LVGL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#configure-the-examples">Configure the examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#initialize-lvgl-and-run-an-example">Initialize LVGL and run an example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/arduino.html#debugging-and-logging">Debugging and logging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/micropython.html">Micropython</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/micropython.html#what-is-micropython">What is Micropython?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#highlights-of-micropython">Highlights of Micropython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/micropython.html#why-micropython-lvgl">Why Micropython + LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#here-are-some-advantages-of-using-lvgl-in-micropython">Here are some advantages of using LVGL in Micropython:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#micropython-lvgl-could-be-used-for">Micropython + LVGL could be used for:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/micropython.html#so-what-does-it-look-like">So what does it look like?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#a-simple-example">A simple example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/micropython.html#how-can-i-use-it">How can I use it?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#online-simulator">Online Simulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#pc-simulator">PC Simulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/micropython.html#embedded-platform">Embedded platform</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/micropython.html#where-can-i-find-more-information">Where can I find more information?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="get-started/nuttx.html">NuttX RTOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nuttx.html#what-is-nuttx">What is NuttX?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#highlights-of-nuttx">Highlights of NuttX</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nuttx.html#why-nuttx-lvgl">Why NuttX + LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#here-are-some-advantages-of-using-lvgl-in-nuttx">Here are some advantages of using LVGL in NuttX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#nuttx-lvgl-could-be-used-for">NuttX + LVGL could be used for</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nuttx.html#how-to-get-started-with-nuttx-and-lvgl">How to get started with NuttX and LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#first-you-need-to-install-the-pre-requisite-on-your-system">First you need to install the pre-requisite on your system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#now-let-s-to-create-a-workspace-to-save-our-files">Now let's to create a workspace to save our files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#clone-the-nuttx-and-apps-repositories">Clone the NuttX and Apps repositories:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#configure-nuttx-to-use-the-stm32f429i-disco-board-and-the-lvgl-demo">Configure NuttX to use the stm32f429i-disco board and the LVGL Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="get-started/nuttx.html#flashing-the-firmware-in-the-board-using-openocd">Flashing the firmware in the board using OpenOCD:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="get-started/nuttx.html#where-can-i-find-more-information">Where can I find more information?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="porting/index.html">Porting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="porting/project.html">Set-up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/project.html#get-the-library">Get the library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/project.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/project.html#initialization">Initialization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting/display.html">Display interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/display.html#draw-buffer">Draw buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/display.html#display-driver">Display driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="porting/display.html#mandatory-fields">Mandatory fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/display.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/display.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="porting/display.html#rotation">Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/display.html#further-reading">Further reading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/display.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting/indev.html">Input device interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/indev.html#types-of-input-devices">Types of input devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#touchpad-mouse-or-any-pointer">Touchpad, mouse or any pointer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#keypad-or-keyboard">Keypad or keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#encoder">Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#button">Button</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="porting/indev.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#feedback">Feedback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#associating-with-a-display">Associating with a display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/indev.html#buffered-reading">Buffered reading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="porting/indev.html#further-reading">Further reading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/indev.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting/tick.html">Tick interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/tick.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting/task-handler.html">Task Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting/sleep.html">Sleep management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="porting/os.html">Operating system and interrupts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/os.html#tasks-and-threads">Tasks and threads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/os.html#interrupts">Interrupts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="porting/log.html">Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="porting/log.html#log-level">Log level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="porting/log.html#printing-logs">Printing logs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="porting/log.html#logging-with-printf">Logging with printf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="porting/log.html#custom-log-function">Custom log function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="porting/log.html#add-logs">Add logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="overview/index.html">Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="overview/object.html">Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/object.html#attributes">Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#basic-attributes">Basic attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#specific-attributes">Specific attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/object.html#working-mechanisms">Working mechanisms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#parent-child-structure">Parent-child structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#moving-together">Moving together</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#visibility-only-on-the-parent">Visibility only on the parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#create-and-delete-objects">Create and delete objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/object.html#screens">Screens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#create-screens">Create screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#get-the-active-screen">Get the active screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#load-screens">Load screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#layers">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/object.html#handling-multiple-displays">Handling multiple displays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/object.html#parts">Parts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/object.html#states">States</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/coords.html">Positions, sizes, and layouts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#units">Units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#boxing-model">Boxing model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#important-notes">Important notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#position">Position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#simple-way">Simple way</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#align">Align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#size">Size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#id1">Simple way</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#using-styles">Using styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#translation">Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#transformation">Transformation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#min-and-max-size">Min and Max size</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#layout">Layout</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#id2">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#built-in-layout">Built-in layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#flags">Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/coords.html#adding-new-layouts">Adding new layouts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/coords.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/style.html">Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#states">States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#cascading-styles">Cascading styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#inheritance">Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#parts">Parts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#initialize-styles-and-set-get-properties">Initialize styles and set/get properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#add-and-remove-styles-to-a-widget">Add and remove styles to a widget</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#add-styles">Add styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#remove-styles">Remove styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#report-style-changes">Report style changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#get-a-property-s-value-on-an-object">Get a property's value on an object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#local-styles">Local styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#properties">Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#typical-background-properties">Typical background properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#transitions">Transitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#color-filter">Color filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#themes">Themes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#extending-themes">Extending themes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/style-props.html">Style properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#size-and-position">Size and position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#width">width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#min-width">min_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#max-width">max_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#height">height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#min-height">min_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#max-height">max_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#x">x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#y">y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#align">align</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#transform-width">transform_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#transform-height">transform_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#translate-x">translate_x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#translate-y">translate_y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#transform-zoom">transform_zoom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#transform-angle">transform_angle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#padding">Padding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-top">pad_top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-bottom">pad_bottom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-left">pad_left</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-right">pad_right</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-row">pad_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#pad-column">pad_column</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#radius">radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#clip-corner">clip_corner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#opa">opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#color-filter-dsc">color_filter_dsc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#color-filter-opa">color_filter_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#anim-time">anim_time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#anim-speed">anim_speed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#transition">transition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#blend-mode">blend_mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#layout">layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#base-dir">base_dir</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#background">Background</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-color">bg_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-opa">bg_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-grad-color">bg_grad_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-grad-dir">bg_grad_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-main-stop">bg_main_stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-grad-stop">bg_grad_stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-img-src">bg_img_src</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-img-opa">bg_img_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-img-recolor">bg_img_recolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-img-recolor-opa">bg_img_recolor_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#bg-img-tiled">bg_img_tiled</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#border">Border</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#border-color">border_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#border-opa">border_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#border-width">border_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#border-side">border_side</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#border-post">border_post</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#text">Text</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-color">text_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-opa">text_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-font">text_font</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-letter-space">text_letter_space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-line-space">text_line_space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-decor">text_decor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#text-align">text_align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#image">Image</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#img-opa">img_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#img-recolor">img_recolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#img-recolor-opa">img_recolor_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#outline">Outline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#outline-width">outline_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#outline-color">outline_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#outline-opa">outline_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#outline-pad">outline_pad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#shadow">Shadow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-width">shadow_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-ofs-x">shadow_ofs_x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-ofs-y">shadow_ofs_y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-spread">shadow_spread</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-color">shadow_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#shadow-opa">shadow_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#line">Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-width">line_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-dash-width">line_dash_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-dash-gap">line_dash_gap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-rounded">line_rounded</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-color">line_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#line-opa">line_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/style-props.html#arc">Arc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#arc-width">arc_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#arc-rounded">arc_rounded</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#arc-color">arc_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#arc-opa">arc_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/style-props.html#arc-img-src">arc_img_src</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/scroll.html">Scroll</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scrollbar">Scrollbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#events">Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#basic-example">Basic example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#features-of-scrolling">Features of scrolling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scrollable">Scrollable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scroll-chain">Scroll chain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scroll-momentum">Scroll momentum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#elastic-scroll">Elastic scroll</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#snapping">Snapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scroll-one">Scroll one</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#scroll-on-focus">Scroll on focus</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#scroll-manually">Scroll manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#self-size">Self size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/scroll.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/scroll.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/layer.html">Layers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/layer.html#order-of-creation">Order of creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/layer.html#bring-to-the-foreground">Bring to the foreground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/layer.html#top-and-sys-layers">Top and sys layers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/event.html">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#add-events-to-the-object">Add events to the object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#remove-event-s-from-an-object">Remove event(s) from an object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#event-codes">Event codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#input-device-events">Input device events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#drawing-events">Drawing events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#other-events">Other events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#special-events">Special events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#custom-events">Custom events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#sending-events">Sending events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#refresh-event">Refresh event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#fields-of-lv-event-t">Fields of lv_event_t</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#event-bubbling">Event bubbling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/event.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/event.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/indev.html">Input devices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/indev.html#pointers">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/indev.html#keypad-and-encoder">Keypad and encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/indev.html#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/indev.html#styling">Styling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/indev.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/indev.html#input-device">Input device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/indev.html#id1">Groups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/display.html">Displays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/display.html#multiple-display-support">Multiple display support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#using-only-one-display">Using only one display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#mirror-display">Mirror display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#split-image">Split image</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/display.html#screens">Screens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#transparent-screens">Transparent screens</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/display.html#features-of-displays">Features of displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#inactivity">Inactivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/display.html#background">Background</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/display.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/color.html">Colors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/color.html#creating-colors">Creating colors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#rgb">RGB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#hsv">HSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#palette">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#modify-and-mix-colors">Modify and mix colors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#built-in-colors">Built-in colors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/color.html#opacity">Opacity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/color.html#color-types">Color types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/color.html#convert-color">Convert color</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/color.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/font.html">Fonts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#unicode-support">Unicode support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#built-in-fonts">Built-in fonts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#normal-fonts">Normal fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#special-fonts">Special fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#special-features">Special features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#bidirectional-support">Bidirectional support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#arabic-and-persian-support">Arabic and Persian support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#subpixel-rendering">Subpixel rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/font.html#compress-fonts">Compress fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#add-new-font">Add new font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#add-new-symbols">Add new symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#load-font-at-run-time">Load font at run-time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/font.html#add-a-new-font-engine">Add a new font engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/image.html">Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#store-images">Store images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#files">Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#color-formats">Color formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#add-and-use-images">Add and use images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#online-converter">Online converter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#manually-create-an-image">Manually create an image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#use-images">Use images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#image-decoder">Image decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#custom-image-formats">Custom image formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#register-an-image-decoder">Register an image decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#manually-use-an-image-decoder">Manually use an image decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#image-caching">Image caching</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#cache-size">Cache size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#value-of-images">Value of images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#clean-the-cache">Clean the cache</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/image.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/image.html#image-buffer">Image buffer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/file-system.html">File system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/file-system.html#ready-to-use-drivers">Ready to use drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/file-system.html#add-a-driver">Add a driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/file-system.html#registering-a-driver">Registering a driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/file-system.html#implementing-the-callbacks">Implementing the callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/file-system.html#other-callbacks">Other callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/file-system.html#usage-example">Usage example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/file-system.html#use-drivers-for-images">Use drivers for images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/file-system.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/animation.html">Animations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#create-an-animation">Create an animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#animation-path">Animation path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#speed-vs-time">Speed vs time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#delete-animations">Delete animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/animation.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/animation.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="overview/animation.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/timer.html">Timers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#create-a-timer">Create a timer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#ready-and-reset">Ready and Reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#set-parameters">Set parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#repeat-count">Repeat count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#measure-idle-time">Measure idle time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#asynchronous-calls">Asynchronous calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/timer.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/drawing.html">Drawing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="overview/drawing.html#mechanism-of-screen-refreshing">Mechanism of screen refreshing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/drawing.html#masking">Masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="overview/drawing.html#hook-drawing">Hook drawing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="overview/drawing.html#main-drawing">Main drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/drawing.html#post-drawing">Post drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/drawing.html#part-drawing">Part drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="overview/drawing.html#others">Others</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="overview/new_widget.html">New widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="widgets/index.html">Widgets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="widgets/obj.html">Base object (lv_obj)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="widgets/obj.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#coordinates">Coordinates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#parents-and-children">Parents and children</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#screens">Screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#styles">Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#flags">Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#extended-click-area">Extended click area</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/obj.html#id1">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/obj.html#keys">Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/obj.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/obj.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/obj.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="widgets/core/index.html">Core widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/arc.html">Arc (lv_arc)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/arc.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/bar.html">Bar (lv_bar)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/bar.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/btn.html">Button (lv_btn)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btn.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/btnmatrix.html">Button matrix (lv_btnmatrix)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/btnmatrix.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/canvas.html">Canvas (lv_canvas)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/canvas.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/checkbox.html">Checkbox (lv_checkbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/checkbox.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/dropdown.html">Drop-down list (lv_dropdown)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#id1">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/dropdown.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/img.html">Image (lv_img)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#transformations">Transformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/img.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/label.html">Label (lv_label)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/label.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/line.html">Line (lv_line)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/line.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/roller.html">Roller (lv_roller)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/roller.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/slider.html">Slider (lv_slider)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/slider.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/switch.html">Switch (lv_switch)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/switch.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/table.html">Table (lv_table)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/table.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/core/textarea.html">Text area (lv_textarea)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/core/textarea.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="widgets/extra/index.html">Extra widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/calendar.html">Calendar (lv_calendar)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#headers">Headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/calendar.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/chart.html">Chart (lv_chart)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/chart.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/colorwheel.html">Color wheel (lv_colorwheel)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/colorwheel.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/imgbtn.html">Image button (lv_imgbtn)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/imgbtn.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/keyboard.html">Keyboard (lv_keyboard)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/keyboard.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/led.html">LED (lv_led)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/led.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/list.html">List (lv_list)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/list.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/meter.html">Meter (lv_meter)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/meter.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/msgbox.html">Message box (lv_msgbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/msgbox.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/span.html">Span (lv_span)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/span.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/spinbox.html">Spinbox (lv_spinbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinbox.html#id1">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/spinner.html">Spinner (lv_spinner)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/spinner.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/tabview.html">Tabview (lv_tabview)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tabview.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/tileview.html">Tile view (lv_tileview)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/tileview.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="widgets/extra/win.html">Window (lv_win)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#get-the-parts">Get the parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="widgets/extra/win.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="layouts/index.html">Layouts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="layouts/flex.html">Flex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#terms">Terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#simple-interface">Simple interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#flex-flow">Flex flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#flex-align">Flex align</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#flex-grow">Flex grow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#style-interface">Style interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#rtl">RTL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#new-track">New track</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/flex.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/flex.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="layouts/grid.html">Grid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#terms">Terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#simple-interface">Simple interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#grid-descriptors">Grid descriptors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#grid-items">Grid items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#grid-align">Grid align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#style-interface">Style interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#rtl">RTL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="layouts/grid.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="layouts/grid.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#pull-request">Pull request</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#from-github">From GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#from-command-line">From command line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#accepted-licenses-and-copyright-notices">Accepted licenses and copyright notices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="CONTRIBUTING.html#your-own-work">Your own work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CONTRIBUTING.html#use-code-from-online-source">Use code from online source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CONTRIBUTING.html#use-mit-licensed-code">Use MIT licensed code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CONTRIBUTING.html#use-gpl-licensed-code">Use GPL licensed code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="CONTRIBUTING.html#ways-to-contribute">Ways to contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#give-lvgl-a-star">Give LVGL a Star</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#tell-what-you-have-achieved">Tell what you have achieved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#write-examples">Write examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#improve-the-docs">Improve the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#report-bugs">Report bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#send-fixes">Send fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#join-the-conversations-in-the-forum">Join the conversations in the Forum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#add-features">Add features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#become-a-maintainer">Become a maintainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="CONTRIBUTING.html#move-your-project-repository-under-lvgl-organization">Move your project repository under LVGL organization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#v8-0-2-16-07-2021">v8.0.2 (16.07.2021)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v8-0-1-14-06-2021">v8.0.1 (14.06.2021)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#v8-0-0-01-06-2021">v8.0.0 (01.06.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#directory-structure">Directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#widget-changes">Widget changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-scrolling">New scrolling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-layouts">New layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#styles">Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driver-changes">Driver changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#other-changes">Other changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-release-policy">New release policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migrating-from-v7-to-v8">Migrating from v7 to v8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-11-0-16-03-2021">v7.11.0 (16.03.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bugfixes">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-10-1-16-02-2021">v7.10.1 (16.02.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-10-0-02-02-2021">v7.10.0 (02.02.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-9-1-19-01-2021">v7.9.1 (19.01.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-9-0-05-01-2021">v7.9.0 (05.01.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-8-1-15-12-2020">v7.8.1 (15.12.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-8-0-01-12-2020">v7.8.0 (01.12.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-7-2-17-11-2020">v7.7.2 (17.11.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-7-1-03-11-2020">v7.7.1 (03.11.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id11">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-7-0-20-10-2020">v7.7.0 (20.10.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id12">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id13">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-6-1-06-10-2020">v7.6.1 (06.10.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id14">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-6-0-22-09-2020">v7.6.0 (22.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id15">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id16">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-5-0-15-09-2020">v7.5.0 (15.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id17">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id18">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-4-0-01-09-2020">v7.4.0 (01.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id19">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id20">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-3-1-18-08-2020">v7.3.1 (18.08.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id21">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-3-0-04-08-2020">v7.3.0 (04.08.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id22">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id23">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-2-0-21-07-2020">v7.2.0 (21.07.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id24">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id25">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-1-0-07-07-2020">v7.1.0 (07.07.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id26">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id27">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-0-2-16-06-2020">v7.0.2 (16.06.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id28">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-0-1-01-06-2020">v7.0.1 (01.06.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id29">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#v7-0-0-18-05-2020">v7.0.0 (18.05.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#legal-changes">Legal changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-drawing-system">New drawing system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-style-system">New style system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gpu-integration">GPU integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#renames">Renames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reworked-and-improved-object">Reworked and improved object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#new-object-types">New object types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#others">Others</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demos">Demos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id30">New release policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#migrating-from-v6-to-v7">Migrating from v6 to v7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="ROADMAP.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ROADMAP.html#v8-x">v8.X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ROADMAP.html#ideas">Ideas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ROADMAP.html#v8">v8</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LVGL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Changelog</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/CHANGELOG.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="v8-0-2-16-07-2021">
+<h2>v8.0.2 (16.07.2021)<a class="headerlink" href="#v8-0-2-16-07-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>fix(theme) improve button focus of keyboard</p></li>
+<li><p>fix(tabview) send LV_EVENT_VALUE_CHANGED only once</p></li>
+<li><p>fix(imgbtn) use the correct src in LV_EVENT_GET_SELF_SIZE</p></li>
+<li><p>fix(color) remove extraneous cast for 8-bit color</p></li>
+<li><p>fix(obj style) fix children reposition if the parent's padding changes.</p></li>
+<li><p>fix(color) remove extraneous _LV_COLOR_MAKE_TYPE_HELPER (#2372)</p></li>
+<li><p>fix(spinner) should not be clickable (#2373)</p></li>
+<li><p>fix(obj) improve how the focusing indev is determined</p></li>
+<li><p>fix(template) update indev template for v8</p></li>
+<li><p>fix(printf) skip defining attribute if pycparser is used</p></li>
+<li><p>refactor(printf) add printf-like function attribute to _lv_txt_set_text_vfmt and lv_label_set_text_fmt (#2332)</p></li>
+<li><p>fix(template) include lvgl.h in lv_port_*_template.c files</p></li>
+<li><p>fix(obj) detecting which indev sent LV_EVENT_FOCUS</p></li>
+<li><p>fix (span) fill LV_EVENT_GET_SELF_SIZE (#2360)</p></li>
+<li><p>fix(arc) disable LV_OBJ_FLAG_SCROLL_CHAIN by default</p></li>
+<li><p>fix (draw) fix arc bg image drawing with full arcs</p></li>
+<li><p>fix(disp) fix memory leak in lv_disp_remove (#2355)</p></li>
+<li><p>fix warnigs introduced by 3fb8baf5</p></li>
+<li><p>fix(widgets) use lv_obj_class for all the widgets</p></li>
+<li><p>fix(obj) move clean ups from lv_obj_del to lv_obj_destructor</p></li>
+<li><p>fix(roller) fix partial redraw of the selected area</p></li>
+<li><p>fix(roller) adjust the size of the selected area correctly</p></li>
+<li><p>fix(obj) delete useless type conversion (#2343)</p></li>
+<li><p>fix(lv_obj_scroll.h) typos (#2345)</p></li>
+<li><p>fix(scroll) fire LV_EVENT_SCROLL_BEGIN in the same spot for both axes</p></li>
+<li><p>fix(btnmatrix) fix button invalidation on focus change</p></li>
+<li><p>fix(textarea) style update in oneline mode + improve sroll to cursor</p></li>
+<li><p>fix(tlsf) do not use &lt;assert.h&gt;</p></li>
+<li><p>fix(imgbtn) consider width==LV_SIZE_CONTENT if only mid. img is set</p></li>
+<li><p>fix(refr) reduce the nesting level in lv_refr_area</p></li>
+<li><p>fix(txt) enhance the function of break_chars (#2327)</p></li>
+<li><p>fix(pxp): update RTOS macro for SDK 2.10</p></li>
+<li><p>fix(vglite): update for v8</p></li>
+<li><p>fix(pxp): update for v8</p></li>
+<li><p>fix(flex) fix layout update and invalidation issues</p></li>
+<li><p>fix(flex) fix NULL pointer dereference</p></li>
+<li><p>fix(obj, switch) do not send LV_EVENT_VALUE_CHANGED twice</p></li>
+<li><p>fix(color) overflow with 16 bit color depth</p></li>
+<li><p>fix(coords) fix using large coordinates</p></li>
+<li><p>fix(chart) fix crash if no series are added</p></li>
+<li><p>fix(chart) invalidation with LV_CHART_UPDATE_MODE_SHIFT</p></li>
+<li><p>fix(align) fix lv_obj_align_to  G</p></li>
+<li><p>fix(table) invalidate the table on cell value change</p></li>
+<li><p>fix(label) remove dupliacted lv_obj_refresh_self_size</p></li>
+<li><p>fix(draw) underflow in subpixel font drawing</p></li>
+<li><p>fix (scroll) do not send unnecessary scroll end events</p></li>
+</ul>
+</div>
+<div class="section" id="v8-0-1-14-06-2021">
+<h2>v8.0.1 (14.06.2021)<a class="headerlink" href="#v8-0-1-14-06-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>docs(filesystem) update to v8 <a href="https://github.com/lvgl/lvgl/commit/7971ade4">7971ade4</a></p></li>
+<li><p>fix(msgbox) create modals on top layer instead of act screen <a href="https://github.com/lvgl/lvgl/commit/5cf6303e">5cf6303e</a></p></li>
+<li><p>fix(colowheel) disable LV_OBJ_FLAG_SCROLL_CHAIN by default <a href="https://github.com/lvgl/lvgl/commit/48d1c292">48d1c292</a></p></li>
+<li><p>docs(grid) typo fix (#2310) <a href="https://github.com/lvgl/lvgl/commit/69d109d2">69d109d2</a></p></li>
+<li><p>fix(arduino) fix the prototype of my_touchpad_read in the LVGL_Arduino.ino <a href="https://github.com/lvgl/lvgl/commit/1a62f7a6">1a62f7a6</a></p></li>
+<li><p>fix(meter) fix needle image invalidation <a href="https://github.com/lvgl/lvgl/commit/54d8e817">54d8e817</a></p></li>
+<li><p>fix(mem) add lv_ prefix to tlsf functions and types <a href="https://github.com/lvgl/lvgl/commit/0d52b59c">0d52b59c</a></p></li>
+<li><p>fix(calendar) fix the position calculation today <a href="https://github.com/lvgl/lvgl/commit/ad05e196">ad05e196</a></p></li>
+<li><p>fix(typo) rename LV_OBJ_FLAG_SNAPABLE to LV_OBJ_FLAG_SNAPPABLE <a href="https://github.com/lvgl/lvgl/commit/e697807c">e697807c</a></p></li>
+<li><p>docs(color) language fixes (#2302) <a href="https://github.com/lvgl/lvgl/commit/07ecc9f1">07ecc9f1</a></p></li>
+<li><p>fix(tick) minor optmization on lv_tick_inc call test <a href="https://github.com/lvgl/lvgl/commit/b4305df5">b4305df5</a></p></li>
+<li><p>Spelling and other language fixes to documentation (#2293) <a href="https://github.com/lvgl/lvgl/commit/d0aaacaf">d0aaacaf</a></p></li>
+<li><p>fix(theme) show disabled state on buttons of btnmatrix, msgbox and kayboard <a href="https://github.com/lvgl/lvgl/commit/0be582b3">0be582b3</a></p></li>
+<li><p>fix(scroll) keep the scroll position on object deleted <a href="https://github.com/lvgl/lvgl/commit/52edbb46">52edbb46</a></p></li>
+<li><p>fix(msgbox) handle NULL btn map paramter <a href="https://github.com/lvgl/lvgl/commit/769c4a30">769c4a30</a></p></li>
+<li><p>fix(group) allow refocusing obejcts <a href="https://github.com/lvgl/lvgl/commit/1520208b">1520208b</a></p></li>
+<li><p>docs(overview) spelling fixes <a href="https://github.com/lvgl/lvgl/commit/d2efb8c6">d2efb8c6</a></p></li>
+<li><p>Merge branch 'master' of https://github.com/lvgl/lvgl <a href="https://github.com/lvgl/lvgl/commit/45960838">45960838</a></p></li>
+<li><p>feat(timer) check if lv_tick_inc is called <a href="https://github.com/lvgl/lvgl/commit/aa6641a6">aa6641a6</a></p></li>
+<li><p>feat(docs) add view on GitHub link <a href="https://github.com/lvgl/lvgl/commit/a716ac6e">a716ac6e</a></p></li>
+<li><p>fix(theme) fix the switch style in the default theme <a href="https://github.com/lvgl/lvgl/commit/0c0dc8ea">0c0dc8ea</a></p></li>
+<li><p>docs fix typo <a href="https://github.com/lvgl/lvgl/commit/8ab80645">8ab80645</a></p></li>
+<li><p>Merge branch 'master' of https://github.com/lvgl/lvgl <a href="https://github.com/lvgl/lvgl/commit/e796448f">e796448f</a></p></li>
+<li><p>feat(event) pass the scroll aniamtion to LV_EVENT_SCROLL_BEGIN <a href="https://github.com/lvgl/lvgl/commit/ca54ecfe">ca54ecfe</a></p></li>
+<li><p>fix(tabview) fix with left and right tabs <a href="https://github.com/lvgl/lvgl/commit/17c57449">17c57449</a></p></li>
+<li><p>chore(docs) force docs rebuild <a href="https://github.com/lvgl/lvgl/commit/4a0f4139">4a0f4139</a></p></li>
+<li><p>chore(docs) always deploy master to docs/master as well <a href="https://github.com/lvgl/lvgl/commit/6d05692d">6d05692d</a></p></li>
+<li><p>fix(template) udpate lv_objx_template to v8 <a href="https://github.com/lvgl/lvgl/commit/38bb8afc">38bb8afc</a></p></li>
+<li><p>docs(extra) add extra/README.md <a href="https://github.com/lvgl/lvgl/commit/8cd504d5">8cd504d5</a></p></li>
+<li><p>Update CHANGELOG.md <a href="https://github.com/lvgl/lvgl/commit/48fd73d2">48fd73d2</a></p></li>
+<li><p>Update quick-overview.md (#2295) <a href="https://github.com/lvgl/lvgl/commit/5616471c">5616471c</a></p></li>
+<li><p>fix(pxp) change LV_COLOR_TRANSP to LV_COLOR_CHROMA_KEY to v8 compatibility <a href="https://github.com/lvgl/lvgl/commit/81f3068d">81f3068d</a></p></li>
+<li><p>adding micropython examples (#2286) <a href="https://github.com/lvgl/lvgl/commit/c60ed68e">c60ed68e</a></p></li>
+<li><p>docs(color) minor fix <a href="https://github.com/lvgl/lvgl/commit/ac8f4534">ac8f4534</a></p></li>
+<li><p>fix(example) revert test code <a href="https://github.com/lvgl/lvgl/commit/77e2c1ff">77e2c1ff</a></p></li>
+<li><p>fix(draw) with additive blending with 32 bit color depth <a href="https://github.com/lvgl/lvgl/commit/786db2af">786db2af</a></p></li>
+<li><p>docs(color) update colors' docs <a href="https://github.com/lvgl/lvgl/commit/9056b5ee">9056b5ee</a></p></li>
+<li><p>Merge branch 'master' of https://github.com/lvgl/lvgl <a href="https://github.com/lvgl/lvgl/commit/a711a1dd">a711a1dd</a></p></li>
+<li><p>perf(refresh) optimize where to wait for lv_disp_flush_ready with 2 buffers <a href="https://github.com/lvgl/lvgl/commit/d0172f14">d0172f14</a></p></li>
+<li><p>docs(lv_obj_style) update add_style and remove_style function headers (#2287) <a href="https://github.com/lvgl/lvgl/commit/60f7bcbf">60f7bcbf</a></p></li>
+<li><p>fix memory leak of spangroup (#2285) <a href="https://github.com/lvgl/lvgl/commit/33e0926a">33e0926a</a></p></li>
+<li><p>fix make lv_img_cache.h public becasue cache invalidation is public <a href="https://github.com/lvgl/lvgl/commit/38ebcd81">38ebcd81</a></p></li>
+<li><p>Merge branch 'master' of https://github.com/lvgl/lvgl <a href="https://github.com/lvgl/lvgl/commit/2b292495">2b292495</a></p></li>
+<li><p>fix(btnmamatrix) fix focus event handling <a href="https://github.com/lvgl/lvgl/commit/3b58ef14">3b58ef14</a></p></li>
+<li><p>Merge pull request #2280 from lvgl/dependabot/pip/docs/urllib3-1.26.5 <a href="https://github.com/lvgl/lvgl/commit/a2f45b26">a2f45b26</a></p></li>
+<li><p>fix(label) calculating the clip area <a href="https://github.com/lvgl/lvgl/commit/57e211cc">57e211cc</a></p></li>
+<li><p>chore(deps): bump urllib3 from 1.26.4 to 1.26.5 in /docs <a href="https://github.com/lvgl/lvgl/commit/b2f77dfc">b2f77dfc</a></p></li>
+<li><p>fix(docs) add docs about the default group <a href="https://github.com/lvgl/lvgl/commit/29bfe604">29bfe604</a></p></li>
+</ul>
+</div>
+<div class="section" id="v8-0-0-01-06-2021">
+<h2>v8.0.0 (01.06.2021)<a class="headerlink" href="#v8-0-0-01-06-2021" title="Permalink to this headline">¶</a></h2>
+<p>v8.0 brings many new features like simplified and more powerful scrolling, new layouts inspired by CSS Flexbox and Grid, simplified and improved widgets, more powerful events, hookable drawing, and more.</p>
+<p>v8 is a major change and therefore it's not backward compatible with v7.</p>
+<div class="section" id="directory-structure">
+<h3>Directory structure<a class="headerlink" href="#directory-structure" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">lv_</span></code> prefix is removed from the folder names</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">docs</span></code> is moved to the <code class="docutils literal notranslate"><span class="pre">lvgl</span></code> repository</p></li>
+<li><p>The <code class="docutils literal notranslate"><span class="pre">examples</span></code> are moved to the <code class="docutils literal notranslate"><span class="pre">lvgl</span></code> repository</p></li>
+<li><p>Create an <code class="docutils literal notranslate"><span class="pre">src/extra</span></code> folder for complex widgets:</p>
+<ul>
+<li><p>It makes the core LVGL leaner</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">extra</span></code> we can have a lot and specific widgets</p></li>
+<li><p>Good place for contributions</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="widget-changes">
+<h3>Widget changes<a class="headerlink" href="#widget-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_cont</span></code> removed, layout features are moved to <code class="docutils literal notranslate"><span class="pre">lv_obj</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_page</span></code> removed, scroll features are moved to <code class="docutils literal notranslate"><span class="pre">lv_obj</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_objmask</span></code> the same can be achieved by events</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_meter</span></code> added as the unioin of <code class="docutils literal notranslate"><span class="pre">lv_linemeter</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_gauge</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_span</span></code> new widget mimicing HTML <code class="docutils literal notranslate"><span class="pre">&lt;span&gt;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_animing</span></code> new widget for simple slideshow animations</p></li>
+<li><p>+ many minor changes and improvements</p></li>
+</ul>
+</div>
+<div class="section" id="new-scrolling">
+<h3>New scrolling<a class="headerlink" href="#new-scrolling" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Support &quot;elastic&quot; scrolling when scrolled in</p></li>
+<li><p>Support scroll chaining among any objects types (not only <code class="docutils literal notranslate"><span class="pre">lv_pages</span></code>s)</p></li>
+<li><p>Remove <code class="docutils literal notranslate"><span class="pre">lv_drag</span></code>. Similar effect can be achieved by setting the position in <code class="docutils literal notranslate"><span class="pre">LV_EVENT_PRESSING</span></code></p></li>
+<li><p>Add snapping</p></li>
+<li><p>Add snap stop to scroll max 1 snap point</p></li>
+</ul>
+</div>
+<div class="section" id="new-layouts">
+<h3>New layouts<a class="headerlink" href="#new-layouts" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-grid/">CSS Grid</a>-like layout support</p></li>
+<li><p><a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">CSS Flexbox</a>-like layout support</p></li>
+</ul>
+</div>
+<div class="section" id="styles">
+<h3>Styles<a class="headerlink" href="#styles" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Optimize and simplify styles</p></li>
+<li><p>State is saved in the object instead of the style property</p></li>
+<li><p>Object size and position can be set in styles too</p></li>
+</ul>
+</div>
+<div class="section" id="events">
+<h3>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Allow adding multiple events to an object</p></li>
+<li><p>A <code class="docutils literal notranslate"><span class="pre">user_data</span></code> can be attached to the added events</p></li>
+</ul>
+</div>
+<div class="section" id="driver-changes">
+<h3>Driver changes<a class="headerlink" href="#driver-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_disp_drv_t</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_indev_drv_t</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_fs_drv_t</span></code> needs to be <code class="docutils literal notranslate"><span class="pre">static</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">...disp_buf...</span></code> is renamed to <code class="docutils literal notranslate"><span class="pre">draw_buf</span></code>. See an initialization example <a class="reference external" href="https://github.com/lvgl/lv_sim_eclipse_sdl/blob/e164e3591c3e1e3bf3464d19e0dcdc67b2e6a791/main.c#L87-L97">here</a>.</p></li>
+<li><p>No partial update if two screen sized buffers are set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">disp_drv-&gt;full_refresh</span> <span class="pre">=</span> <span class="pre">1</span></code> makes always the whole display redraw.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">hor_res</span></code> and <code class="docutils literal notranslate"><span class="pre">ver_res</span></code> need to be set in <code class="docutils literal notranslate"><span class="pre">disp_drv</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">indev_read_cb</span></code> returns <code class="docutils literal notranslate"><span class="pre">void</span></code>. To indicate that there is more that to read set <code class="docutils literal notranslate"><span class="pre">data-&gt;continue_reading</span> <span class="pre">=</span> <span class="pre">1</span></code> in the <code class="docutils literal notranslate"><span class="pre">read_cb</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="other-changes">
+<h3>Other changes<a class="headerlink" href="#other-changes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Remove the copy parameter from create functions</p></li>
+<li><p>Simplified File system interface API</p></li>
+<li><p>Use a more generic inheritance</p></li>
+<li><p>The built-in themes are reworked</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_obj_align</span></code> now saved the alignment and realigns the object automatically but can't be used to align to other than the parent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_obj_align_to</span></code> can align to an object but doesn't save the alignment</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_pct(x)</span></code> can be used to set the size and position in percentage</p></li>
+<li><p>There are many other changes in widgets that are not detailed here. Please refer to the documentation of the widgets.</p></li>
+</ul>
+</div>
+<div class="section" id="new-release-policy">
+<h3>New release policy<a class="headerlink" href="#new-release-policy" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>We will follow <a class="reference external" href="https://docs.gitlab.com/ee/topics/gitlab_flow.html#release-branches-with-gitlab-flow">Release branches with GitLab flow</a></p></li>
+<li><p>Minor releases are expected in every 3-4 month</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">master</span></code> will always contain the latest changes</p></li>
+</ul>
+</div>
+<div class="section" id="migrating-from-v7-to-v8">
+<h3>Migrating from v7 to v8<a class="headerlink" href="#migrating-from-v7-to-v8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First and foremost, create a new <code class="docutils literal notranslate"><span class="pre">lv_conf.h</span></code> based on <code class="docutils literal notranslate"><span class="pre">lv_conf_template.h</span></code>.</p></li>
+<li><p>To try the new version it's recommended to use a simulator project and see the examples.</p></li>
+<li><p>When migrating your project to v8</p>
+<ul>
+<li><p>Update the drivers are described above</p></li>
+<li><p>Update the styles</p></li>
+<li><p>Update the events</p></li>
+<li><p>Use the new layouts instead of <code class="docutils literal notranslate"><span class="pre">lv_cont</span></code> features</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">lv_obj</span></code> instead of <code class="docutils literal notranslate"><span class="pre">lv_page</span></code></p></li>
+<li><p>The other parts are mainly minor renames and refactoring. See the functions' documentation for descriptions.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-11-0-16-03-2021">
+<h2>v7.11.0 (16.03.2021)<a class="headerlink" href="#v7-11-0-16-03-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="new-features">
+<h3>New features<a class="headerlink" href="#new-features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add better screen orientation management with software rotation support</p></li>
+<li><p>Decide text animation's direction based on base_dir (when using LV_USE_BIDI)</p></li>
+</ul>
+</div>
+<div class="section" id="bugfixes">
+<h3>Bugfixes<a class="headerlink" href="#bugfixes" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(gauge) fix needle invalidation</p></li>
+<li><p>fix(bar) correct symmetric handling for vertical sliders</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-10-1-16-02-2021">
+<h2>v7.10.1 (16.02.2021)<a class="headerlink" href="#v7-10-1-16-02-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3>Bugfixes<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(draw) overlap outline with background to prevent aliasing artifacts</p></li>
+<li><p>fix(indev) clear the indev's <code class="docutils literal notranslate"><span class="pre">act_obj</span></code> in <code class="docutils literal notranslate"><span class="pre">lv_indev_reset</span></code></p></li>
+<li><p>fix(text) fix out of bounds read in <code class="docutils literal notranslate"><span class="pre">_lv_txt_get_width</span></code></p></li>
+<li><p>fix(list) scroll list when button is focused using LV_KEY_NEXT/PREV</p></li>
+<li><p>fix(text) improve Arabic contextual analysis by adding hyphen processing and proper handling of lam-alef sequence</p></li>
+<li><p>fix(delete) delete animation after the children are deleted</p></li>
+<li><p>fix(gauge) consider paddings for needle images</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-10-0-02-02-2021">
+<h2>v7.10.0 (02.02.2021)<a class="headerlink" href="#v7-10-0-02-02-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3>New features<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>feat(indev) allow input events to be passed to disabled objects</p></li>
+<li><p>feat(spinbox) add inline get_step function for MicroPython support</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>Bugfixes<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(btnmatrix) fix lv_btnmatrix_get_active_btn_text() when used in a group</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-9-1-19-01-2021">
+<h2>v7.9.1 (19.01.2021)<a class="headerlink" href="#v7-9-1-19-01-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h3>Bugfixes<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(cpicker) fix division by zero</p></li>
+<li><p>fix(dropdown) fix selecting options after the last one</p></li>
+<li><p>fix(msgbox) use the animation time provided</p></li>
+<li><p>fix(gpu_nxp_pxp) fix incorrect define name</p></li>
+<li><p>fix(indev) don't leave edit mode if there is only one object in the group</p></li>
+<li><p>fix(draw_rect) fix draw pattern stack-use-after-scope error</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-9-0-05-01-2021">
+<h2>v7.9.0 (05.01.2021)<a class="headerlink" href="#v7-9-0-05-01-2021" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3>New features<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>feat(chart) add lv_chart_remove_series and lv_chart_hide_series</p></li>
+<li><p>feat(img_cahce) allow disabling image caching</p></li>
+<li><p>calendar: make get_day_of_week() public</p></li>
+<li><p>Added support for Zephyr integration</p></li>
+</ul>
+</div>
+<div class="section" id="id6">
+<h3>Bugfixes<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(draw_rect) free buffer used for arabic processing</p></li>
+<li><p>fix(win) arabic process the title of the window</p></li>
+<li><p>fix(dropdown) arabic process the option in lv_dropdown_add_option</p></li>
+<li><p>fix(textarea) buffer overflow in password mode with UTF-8 characters</p></li>
+<li><p>fix(textarea) cursor position after hiding character in password mode</p></li>
+<li><p>fix(linemeter) draw critical lines with correct color</p></li>
+<li><p>fix(lv_conf_internal) be sure Kconfig defines are always uppercase</p></li>
+<li><p>fix(kconfig) handle disable sprintf float correctly.</p></li>
+<li><p>fix(layout) stop layout after recursion threshold is reached</p></li>
+<li><p>fix(gauge) fix redraw with image needle</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-8-1-15-12-2020">
+<h2>v7.8.1 (15.12.2020)<a class="headerlink" href="#v7-8-1-15-12-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id7">
+<h3>Bugfixes<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(lv_scr_load_anim) fix when multiple screen are loaded at tsame time with delay</p></li>
+<li><p>fix(page) fix LV_SCOLLBAR_MODE_DRAG</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-8-0-01-12-2020">
+<h2>v7.8.0 (01.12.2020)<a class="headerlink" href="#v7-8-0-01-12-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h3>New features<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>make DMA2D non blocking</p></li>
+<li><p>add unscii-16 built-in font</p></li>
+<li><p>add KConfig</p></li>
+<li><p>add lv_refr_get_fps_avg()</p></li>
+</ul>
+</div>
+<div class="section" id="id9">
+<h3>Bugfixes<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(btnmatrix) handle arabic texts in button matrices</p></li>
+<li><p>fix(indev) disabled object shouldn't absorb clicks but let the parent to be clicked</p></li>
+<li><p>fix(arabic) support processing again already processed texts with _lv_txt_ap_proc</p></li>
+<li><p>fix(textarea) support Arabic letter connections</p></li>
+<li><p>fix(dropdown) support Arabic letter connections</p></li>
+<li><p>fix(value_str) support Arabic letter connections in value string property</p></li>
+<li><p>fix(indev) in LV_INDEV_TYPE_BUTTON recognize 1 cycle long presses too</p></li>
+<li><p>fix(arc) make arc work with encoder</p></li>
+<li><p>fix(slider) adjusting the left knob too with encoder</p></li>
+<li><p>fix reference to LV_DRAW_BUF_MAX_NUM in lv_mem.c</p></li>
+<li><p>fix(polygon draw) join adjacent points if they are on the same coordinate</p></li>
+<li><p>fix(linemeter) fix invalidation when setting new value</p></li>
+<li><p>fix(table) add missing invalidation when changing cell type</p></li>
+<li><p>refactor(roller) rename LV_ROLLER_MODE_INIFINITE -&gt; LV_ROLLER_MODE_INFINITE</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-7-2-17-11-2020">
+<h2>v7.7.2 (17.11.2020)<a class="headerlink" href="#v7-7-2-17-11-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id10">
+<h3>Bugfixes<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>fix(draw_triangle): fix polygon/triangle drawing when the order of points is counter-clockwise</p></li>
+<li><p>fix(btnmatrix): fix setting the same map with modified pointers</p></li>
+<li><p>fix(arc) fix and improve arc dragging</p></li>
+<li><p>label: Repair calculate back <code class="docutils literal notranslate"><span class="pre">dot</span></code> character logical error which cause infinite loop.</p></li>
+<li><p>fix(theme_material): remove the bottom border from tabview header</p></li>
+<li><p>fix(imgbtn) guess a the closest available state with valid src</p></li>
+<li><p>fix(spinbox) update cursor position in lv_spinbox_set_step</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-7-1-03-11-2020">
+<h2>v7.7.1 (03.11.2020)<a class="headerlink" href="#v7-7-1-03-11-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id11">
+<h3>Bugfixes<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Respect btnmatrix's <code class="docutils literal notranslate"><span class="pre">one_check</span></code> in <code class="docutils literal notranslate"><span class="pre">lv_btnmatrix_set_btn_ctrl</span></code></p></li>
+<li><p>Gauge: make the needle images to use the styles from <code class="docutils literal notranslate"><span class="pre">LV_GAUGE_PART_PART</span></code></p></li>
+<li><p>Group: fix in <code class="docutils literal notranslate"><span class="pre">lv_group_remove_obj</span></code> to handle deleting hidden obejcts correctly</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-7-0-20-10-2020">
+<h2>v7.7.0 (20.10.2020)<a class="headerlink" href="#v7-7-0-20-10-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id12">
+<h3>New features<a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add PXP GPU support (for NXP MCUs)</p></li>
+<li><p>Add VG-Lite GPU support (for NXP MCUs)</p></li>
+<li><p>Allow max. 16 cell types for table</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_table_set_text_fmt()</span></code></p></li>
+<li><p>Use margin on calendar header to set distances and padding to the size of the header</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">text_sel_bg</span></code> style property</p></li>
+</ul>
+</div>
+<div class="section" id="id13">
+<h3>Bugfixes<a class="headerlink" href="#id13" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Theme update to support text selection background</p></li>
+<li><p>Fix imgbtn state change</p></li>
+<li><p>Support RTL in table (draw columns right to left)</p></li>
+<li><p>Support RTL in pretty layout (draw columns right to left)</p></li>
+<li><p>Skip objects in groups if they are in disabled state</p></li>
+<li><p>Fix dropdown selection with RTL basedirection</p></li>
+<li><p>Fix rectangle border drawing with large width</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">lv_win_clean()</span></code></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-6-1-06-10-2020">
+<h2>v7.6.1 (06.10.2020)<a class="headerlink" href="#v7-6-1-06-10-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id14">
+<h3>Bugfixes<a class="headerlink" href="#id14" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix BIDI support in dropdown list</p></li>
+<li><p>Fix copying base dir in <code class="docutils literal notranslate"><span class="pre">lv_obj_create</span></code></p></li>
+<li><p>Handle sub pixel rendering in font loader</p></li>
+<li><p>Fix transitions with style caching</p></li>
+<li><p>Fix click focus</p></li>
+<li><p>Fix imgbtn image switching with empty style</p></li>
+<li><p>Material theme: do not set the text font to allow easy global font change</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-6-0-22-09-2020">
+<h2>v7.6.0 (22.09.2020)<a class="headerlink" href="#v7-6-0-22-09-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id15">
+<h3>New features<a class="headerlink" href="#id15" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Check whether any style property has changed on a state change to decide if any redraw is required</p></li>
+</ul>
+</div>
+<div class="section" id="id16">
+<h3>Bugfixes<a class="headerlink" href="#id16" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix selection of options with non-ASCII letters in dropdown list</p></li>
+<li><p>Fix font loader to support LV_FONT_FMT_TXT_LARGE</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-5-0-15-09-2020">
+<h2>v7.5.0 (15.09.2020)<a class="headerlink" href="#v7-5-0-15-09-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id17">
+<h3>New features<a class="headerlink" href="#id17" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">clean_dcache_cb</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_disp_clean_dcache</span></code> to enable users to use their own cache management function</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">gpu_wait_cb</span></code> to wait until the GPU is working. It allows to run CPU a wait only when the rendered data is needed.</p></li>
+<li><p>Add 10px and 8ox built in fonts</p></li>
+</ul>
+</div>
+<div class="section" id="id18">
+<h3>Bugfixes<a class="headerlink" href="#id18" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix unexpected DEFOCUS on lv_page when clicking to bg after the scrollable</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">lv_obj_del</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_obj_clean</span></code> if the children list changed during deletion.</p></li>
+<li><p>Adjust button matrix button width to include padding when spanning multiple units.</p></li>
+<li><p>Add rounding to btnmatrix line height calculation</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">decmopr_buf</span></code> to GC roots</p></li>
+<li><p>Fix divisioin by zero in draw_pattern (lv_draw_rect.c) if the image or letter is not found</p></li>
+<li><p>Fix drawing images with 1 px height or width</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-4-0-01-09-2020">
+<h2>v7.4.0 (01.09.2020)<a class="headerlink" href="#v7-4-0-01-09-2020" title="Permalink to this headline">¶</a></h2>
+<p>The main new features of v7.4 are run-time font loading, style caching and arc knob with value setting by click.</p>
+<div class="section" id="id19">
+<h3>New features<a class="headerlink" href="#id19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_font_load()</span></code> function - Loads a <code class="docutils literal notranslate"><span class="pre">lv_font_t</span></code> object from a binary font file</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_font_free()</span></code> function - Frees the memory allocated by the <code class="docutils literal notranslate"><span class="pre">lv_font_load()</span></code> function</p></li>
+<li><p>Add style caching to reduce access time of properties with default value</p></li>
+<li><p>arc: add set value by click feature</p></li>
+<li><p>arc: add <code class="docutils literal notranslate"><span class="pre">LV_ARC_PART_KNOB</span></code> similarly to slider</p></li>
+<li><p>send gestures event if the object was dragged. User can check dragging with <code class="docutils literal notranslate"><span class="pre">lv_indev_is_dragging(lv_indev_act())</span></code> in the event function.</p></li>
+</ul>
+</div>
+<div class="section" id="id20">
+<h3>Bugfixes<a class="headerlink" href="#id20" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix color bleeding on border drawing</p></li>
+<li><p>Fix using 'LV_SCROLLBAR_UNHIDE' after 'LV_SCROLLBAR_ON'</p></li>
+<li><p>Fix croping of last column/row if an image is zoomed</p></li>
+<li><p>Fix zooming and rotateing mosaic images</p></li>
+<li><p>Fix deleting tabview with LEFT/RIGHT tab position</p></li>
+<li><p>Fix btnmatrix to not send event when CLICK_TRIG = true and the cursor slid from a pressed button</p></li>
+<li><p>Fix roller width if selected text is larger than the normal</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-3-1-18-08-2020">
+<h2>v7.3.1 (18.08.2020)<a class="headerlink" href="#v7-3-1-18-08-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id21">
+<h3>Bugfixes<a class="headerlink" href="#id21" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix drawing value string twice</p></li>
+<li><p>Rename  <code class="docutils literal notranslate"><span class="pre">lv_chart_clear_serie</span></code> to <code class="docutils literal notranslate"><span class="pre">lv_chart_clear_series</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_obj_align_origo</span></code> to <code class="docutils literal notranslate"><span class="pre">lv_obj_align_mid</span></code></p></li>
+<li><p>Add linemeter's mirror feature again</p></li>
+<li><p>Fix text decor (udnerline strikethrough) with older versions of font converter</p></li>
+<li><p>Fix setting local style property multiple times</p></li>
+<li><p>Add missing background drawing and radius handling to image button</p></li>
+<li><p>Allow adding extra label to list buttons</p></li>
+<li><p>Fix crash if <code class="docutils literal notranslate"><span class="pre">lv_table_set_col_cnt</span></code> is called before <code class="docutils literal notranslate"><span class="pre">lv_table_set_row_cnt</span></code> for the first time</p></li>
+<li><p>Fix overflow in large image transformations</p></li>
+<li><p>Limit extra button click area of button matrix's buttons. With large paddings it was counter intuitive. (Gaps are mapped to button when clicked).</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">lv_btnmatrix_set_one_check</span></code> not forcing exactly one button to be checked</p></li>
+<li><p>Fix color picker invalidation in rectangle mode</p></li>
+<li><p>Init disabled days to gray color in calendar</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-3-0-04-08-2020">
+<h2>v7.3.0 (04.08.2020)<a class="headerlink" href="#v7-3-0-04-08-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id22">
+<h3>New features<a class="headerlink" href="#id22" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_task_get_next</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_event_send_refresh</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_event_send_refresh_recursive</span></code> to easily send <code class="docutils literal notranslate"><span class="pre">LV_EVENT_REFRESH</span></code> to object</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_tabview_set_tab_name()</span></code> function - used to change a tab's name</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LV_THEME_MATERIAL_FLAG_NO_TRANSITION</span></code> and <code class="docutils literal notranslate"><span class="pre">LV_THEME_MATERIAL_FLAG_NO_FOCUS</span></code> flags</p></li>
+<li><p>Reduce code size by adding: <code class="docutils literal notranslate"><span class="pre">LV_USE_FONT_COMPRESSED</span></code> and <code class="docutils literal notranslate"><span class="pre">LV_FONT_USE_SUBPX</span></code> and applying some optimization</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LV_MEMCPY_MEMSET_STD</span></code> to use standard <code class="docutils literal notranslate"><span class="pre">memcpy</span></code> and <code class="docutils literal notranslate"><span class="pre">memset</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="id23">
+<h3>Bugfixes<a class="headerlink" href="#id23" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Do not print warning for missing glyph if its height OR width is zero.</p></li>
+<li><p>Prevent duplicated sending of <code class="docutils literal notranslate"><span class="pre">LV_EVENT_INSERT</span></code> from text area</p></li>
+<li><p>Tidy outer edges of cpicker widget.</p></li>
+<li><p>Remove duplicated lines from <code class="docutils literal notranslate"><span class="pre">lv_tabview_add_tab</span></code></p></li>
+<li><p>btnmatrix: hadle combined states of buttons (e.g. chacked + disabled)</p></li>
+<li><p>textarea: fix typo in lv_textarea_set_sscrollbar_mode</p></li>
+<li><p>gauge: fix image needle drawing</p></li>
+<li><p>fix using freed memory in _lv_style_list_remove_style</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-2-0-21-07-2020">
+<h2>v7.2.0 (21.07.2020)<a class="headerlink" href="#v7-2-0-21-07-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id24">
+<h3>New features<a class="headerlink" href="#id24" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add screen transitions with <code class="docutils literal notranslate"><span class="pre">lv_scr_load_anim()</span></code></p></li>
+<li><p>Add display background color, wallpaper and opacity. Shown when the screen is transparent. Can be used with <code class="docutils literal notranslate"><span class="pre">lv_disp_set_bg_opa/color/image()</span></code>.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LV_CALENDAR_WEEK_STARTS_MONDAY</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_set_x_start_point()</span></code> function - Set the index of the x-axis start point in the data array</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_set_ext_array()</span></code> function - Set an external array of data points to use for the chart</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_set_point_id()</span></code> function - Set an individual point value in the chart series directly based on index</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_get_x_start_point()</span></code> function - Get the current index of the x-axis start point in the data array</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_get_point_id()</span></code> function - Get an individual point value in the chart series directly based on index</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">ext_buf_assigned</span></code> bit field to <code class="docutils literal notranslate"><span class="pre">lv_chart_series_t</span></code> structure - it's true if external buffer is assigned to series</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_set_series_axis()</span></code> to assign series to primary or secondary axis</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_chart_set_y_range()</span></code> to allow setting range of secondary y axis (based on <code class="docutils literal notranslate"><span class="pre">lv_chart_set_range</span></code> but extended with an axis parameter)</p></li>
+<li><p>Allow setting different font for the selected text in <code class="docutils literal notranslate"><span class="pre">lv_roller</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">theme-&gt;apply_cb</span></code> to replace <code class="docutils literal notranslate"><span class="pre">theme-&gt;apply_xcb</span></code> to make it compatible with the MicroPython binding</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_theme_set_base()</span></code> to allow easy extension of built-in (or any) themes</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_obj_align_x()</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_obj_align_y()</span></code> functions</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_obj_align_origo_x()</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_obj_align_origo_y()</span></code> functions</p></li>
+</ul>
+</div>
+<div class="section" id="id25">
+<h3>Bugfixes<a class="headerlink" href="#id25" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">tileview</span></code> fix navigation when not screen sized</p></li>
+<li><p>Use 14px font by default to for better compatibility with smaller displays</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linemeter</span></code> fix conversation of current value to &quot;level&quot;</p></li>
+<li><p>Fix drawing on right border</p></li>
+<li><p>Set the cursor image non clickable by default</p></li>
+<li><p>Improve mono theme when used with keyboard or encoder</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-1-0-07-07-2020">
+<h2>v7.1.0 (07.07.2020)<a class="headerlink" href="#v7-1-0-07-07-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id26">
+<h3>New features<a class="headerlink" href="#id26" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">focus_parent</span></code> attribute to <code class="docutils literal notranslate"><span class="pre">lv_obj</span></code></p></li>
+<li><p>Allow using buttons in encoder input device</p></li>
+<li><p>Add lv_btnmatrix_set/get_align capability</p></li>
+<li><p>DMA2D: Remove dependency on ST CubeMX HAL</p></li>
+<li><p>Added <code class="docutils literal notranslate"><span class="pre">max_used</span></code> propriety to <code class="docutils literal notranslate"><span class="pre">lv_mem_monitor_t</span></code> struct</p></li>
+<li><p>In <code class="docutils literal notranslate"><span class="pre">lv_init</span></code> test if the strings are UTF-8 encoded.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">user_data</span></code> to themes</p></li>
+<li><p>Add LV_BIG_ENDIAN_SYSTEM flag to lv_conf.h in order to fix displaying images on big endian systems.</p></li>
+<li><p>Add inline function lv_checkbox_get_state(const lv_obj_t * cb) to extend the checkbox functionality.</p></li>
+<li><p>Add inline function lv_checkbox_set_state(const lv_obj_t * cb, lv_btn_state_t state ) to extend the checkbox functionality.</p></li>
+</ul>
+</div>
+<div class="section" id="id27">
+<h3>Bugfixes<a class="headerlink" href="#id27" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_img</span></code> fix invalidation area when angle or zoom changes</p></li>
+<li><p>Update the style handling to support Big endian MCUs</p></li>
+<li><p>Change some methods to support big endian hardware.</p></li>
+<li><p>remove use of c++ keyword 'new' in parameter of function lv_theme_set_base().</p></li>
+<li><p>Add LV_BIG_ENDIAN_SYSTEM flag to lv_conf.h in order to fix displaying images on big endian systems.</p></li>
+<li><p>Fix inserting chars in text area in big endian hardware.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-0-2-16-06-2020">
+<h2>v7.0.2 (16.06.2020)<a class="headerlink" href="#v7-0-2-16-06-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id28">
+<h3>Bugfixes<a class="headerlink" href="#id28" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_textarea</span></code> fix wrong cursor position when clicked after the last character</p></li>
+<li><p>Change all text related indices from 16-bit to 32-bit integers throughout whole library. #1545</p></li>
+<li><p>Fix gestures</p></li>
+<li><p>Do not call <code class="docutils literal notranslate"><span class="pre">set_px_cb</span></code> for transparent pixel</p></li>
+<li><p>Fix list button focus in material theme</p></li>
+<li><p>Fix crash when the a text area is cleared with the backspace of a keyboard</p></li>
+<li><p>Add version number to <code class="docutils literal notranslate"><span class="pre">lv_conf_template.h</span></code></p></li>
+<li><p>Add log in true double buffering mode with <code class="docutils literal notranslate"><span class="pre">set_px_cb</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_dropdown</span></code>: fix missing <code class="docutils literal notranslate"><span class="pre">LV_EVENT_VALUE_CHANGED</span></code> event when used with encoder</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_tileview</span></code>: fix if not the {0;0} tile is created first</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_debug</span></code>: restructure to allow asserting in from <code class="docutils literal notranslate"><span class="pre">lv_misc</span></code> too</p></li>
+<li><p>add assert if <code class="docutils literal notranslate"><span class="pre">_lv_mem_buf_get()</span></code> fails</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_textarea</span></code>: fix character delete in password mode</p></li>
+<li><p>Update <code class="docutils literal notranslate"><span class="pre">LV_OPA_MIN</span></code> and <code class="docutils literal notranslate"><span class="pre">LV_OPA_MAX</span></code> to widen the opacity processed range</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_btnm</span></code> fix sending events for hidden buttons</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_gaguge</span></code> make <code class="docutils literal notranslate"><span class="pre">lv_gauge_set_angle_offset</span></code> offset the labels and needles too</p></li>
+<li><p>Fix typo in the API <code class="docutils literal notranslate"><span class="pre">scrllable</span></code> -&gt; <code class="docutils literal notranslate"><span class="pre">scrollable</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tabview</span></code> by default allow auto expanding the page only to right and bottom (#1573)</p></li>
+<li><p>fix crash when drawing gradient to the same color</p></li>
+<li><p>chart: fix memory leak</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">img</span></code>: improve hit test for transformed images</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-0-1-01-06-2020">
+<h2>v7.0.1 (01.06.2020)<a class="headerlink" href="#v7-0-1-01-06-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id29">
+<h3>Bugfixes<a class="headerlink" href="#id29" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Make the Microptyhon working by adding the required variables as GC_ROOT</p></li>
+<li><p>Prefix some internal API functions with <code class="docutils literal notranslate"><span class="pre">_</span></code> to reduce the API of LVGL</p></li>
+<li><p>Fix built-in SimSun CJK font</p></li>
+<li><p>Fix UTF-8 encoding when <code class="docutils literal notranslate"><span class="pre">LV_USE_ARABIC_PERSIAN_CHARS</span></code> is enabled</p></li>
+<li><p>Fix DMA2D usage when 32 bit images directly blended</p></li>
+<li><p>Fix lv_roller in infinite mode when used with encoder</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">lv_theme_get_color_secondary()</span></code></p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">LV_COLOR_MIX_ROUND_OFS</span></code> to adjust color mixing to make it compatible with the GPU</p></li>
+<li><p>Improve DMA2D blending</p></li>
+<li><p>Remove memcpy from <code class="docutils literal notranslate"><span class="pre">lv_ll</span></code> (caused issues with some optimization settings)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_chart</span></code> fix X tick drawing</p></li>
+<li><p>Fix vertical dashed line drawing</p></li>
+<li><p>Some additional minor fixes and formattings</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="v7-0-0-18-05-2020">
+<h2>v7.0.0 (18.05.2020)<a class="headerlink" href="#v7-0-0-18-05-2020" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="documentation">
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h3>
+<p>The docs for v7 is available at https://docs.littlevgl.com/v7/en/html/index.html</p>
+</div>
+<div class="section" id="legal-changes">
+<h3>Legal changes<a class="headerlink" href="#legal-changes" title="Permalink to this headline">¶</a></h3>
+<p>The name of the project is changed to LVGL and the new website is on https://lvgl.io</p>
+<p>LVGL remains free under the same conditions (MIT license) and a company is created to manage LVGL and offer services.</p>
+</div>
+<div class="section" id="new-drawing-system">
+<h3>New drawing system<a class="headerlink" href="#new-drawing-system" title="Permalink to this headline">¶</a></h3>
+<p>Complete rework of LVGL's draw engine to use &quot;masks&quot; for more advanced and higher quality graphical effects.
+A possible use-case of this system is to remove the overflowing content from the rounded edges.
+It also allows drawing perfectly anti-aliased circles, lines, and arcs.
+Internally, the drawings happen by defining masks (such as rounded rectangle, line, angle).
+When something is drawn the currently active masks can make some pixels transparent.
+For example, rectangle borders are drawn by using 2 rectangle masks: one mask removes the inner part and another the outer part.</p>
+<p>The API in this regard remained the same but some new functions were added:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_img_set_zoom</span></code>: set image object's zoom factor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_img_set_angle</span></code>: set image object's angle without using canvas</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_img_set_pivot</span></code>: set the pivot point of rotation</p></li>
+</ul>
+<p>The new drawing engine brought new drawing features too. They are highlighted in the &quot;style&quot; section.</p>
+</div>
+<div class="section" id="new-style-system">
+<h3>New style system<a class="headerlink" href="#new-style-system" title="Permalink to this headline">¶</a></h3>
+<p>The old style system is replaced with a new more flexible and lightweighted one.
+It uses an approach similar to CSS: support cascading styles, inheriting properties and local style properties per object.
+As part of these updates, a lot of objects were reworked and the APIs have been changed.</p>
+<ul class="simple">
+<li><p>more shadows options: <em>offset</em> and <em>spread</em></p></li>
+<li><p>gradient stop position to shift the gradient area and horizontal gradient</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_BLEND_MODE_NORMAL/ADDITIVE/SUBTRACTIVE</span></code> blending modes</p></li>
+<li><p><em>clip corner</em>: crop the content on the rounded corners</p></li>
+<li><p><em>text underline</em> and <em>strikethrough</em></p></li>
+<li><p>dashed vertical and horizontal lines (<em>dash gap</em>, <em>dash_width</em>)</p></li>
+<li><p><em>outline</em>: a border-like part drawn out of the background. Can have spacing to the background.</p></li>
+<li><p><em>pattern</em>: display and image in the middle of the background or repeat it</p></li>
+<li><p><em>value</em> display a text which is stored in the style. It can be used e.g. as a lighweighted text on buttons too.</p></li>
+<li><p><em>margin</em>: similar to <em>padding</em> but used to keep space outside of the object</p></li>
+</ul>
+<p>Read the <a class="reference external" href="https://docs.littlevgl.com/v7/en/html/overview/style.html">Style</a> section of the documentation to learn how the new styles system works.</p>
+</div>
+<div class="section" id="gpu-integration">
+<h3>GPU integration<a class="headerlink" href="#gpu-integration" title="Permalink to this headline">¶</a></h3>
+<p>To better utilize GPUs, from this version GPU usage can be integrated into LVGL. In <code class="docutils literal notranslate"><span class="pre">lv_conf.h</span></code> any supported GPUs can be enabled with a single configuration option.</p>
+<p>Right now, only ST's DMA2D (Chrom-ART) is integrated. More will in the upcoming releases.</p>
+</div>
+<div class="section" id="renames">
+<h3>Renames<a class="headerlink" href="#renames" title="Permalink to this headline">¶</a></h3>
+<p>The following object types are renamed:</p>
+<ul class="simple">
+<li><p>sw -&gt; switch</p></li>
+<li><p>ta -&gt; textarea</p></li>
+<li><p>cb -&gt; checkbox</p></li>
+<li><p>lmeter -&gt; linemeter</p></li>
+<li><p>mbox -&gt; msgbox</p></li>
+<li><p>ddlist -&gt; dropdown</p></li>
+<li><p>btnm -&gt; btnmatrix</p></li>
+<li><p>kb -&gt; keyboard</p></li>
+<li><p>preload -&gt; spinner</p></li>
+<li><p>lv_objx folder -&gt; lv_widgets</p></li>
+<li><p>LV_FIT_FILL -&gt; LV_FIT_PARENT</p></li>
+<li><p>LV_FIT_FLOOD -&gt; LV_FLOOD_MAX</p></li>
+<li><p>LV_LAYOUT_COL_L/M/R -&gt; LV_LAYOUT_COLUMN_LEFT/MID/RIGHT</p></li>
+<li><p>LV_LAYOUT_ROW_T/M/B -&gt; LV_LAYOUT_ROW_TOP/MID/BOTTOM</p></li>
+</ul>
+</div>
+<div class="section" id="reworked-and-improved-object">
+<h3>Reworked and improved object<a class="headerlink" href="#reworked-and-improved-object" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">dropdown</span></code>: Completely reworked. Now creates a separate list when opened and can be dropped to down/up/left/right.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>: <code class="docutils literal notranslate"><span class="pre">body_draw</span></code> is removed, instead, if its style has a visible background/border/shadow etc it will be drawn. Padding really makes the object larger (not just virtually as before)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">arc</span></code>: can draw bacground too.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">btn</span></code>: doesn't store styles for each state because it's done naturally in the new style system.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">calendar</span></code>: highlight the pressed datum. The used styles are changed: use <code class="docutils literal notranslate"><span class="pre">LV_CALENDAR_PART_DATE</span></code> normal for normal dates, checked for highlighted, focused for today, pressed for the being pressed. (checked+pressed, focused+pressed also work)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chart</span></code>: only has <code class="docutils literal notranslate"><span class="pre">LINE</span></code> and <code class="docutils literal notranslate"><span class="pre">COLUMN</span></code> types because with new styles all the others can be described. LV_CHART_PART_SERIES sets the style of the series. bg_opa &gt; 0 draws an area in LINE mode. <code class="docutils literal notranslate"><span class="pre">LV_CHART_PART_SERIES_BG</span></code> also added to set a different style for the series area. Padding in <code class="docutils literal notranslate"><span class="pre">LV_CHART_PART_BG</span></code> makes the series area smaller, and it ensures space for axis labels/numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">linemeter</span></code>, <code class="docutils literal notranslate"><span class="pre">gauge</span></code>: can have background if the related style properties are set. Padding makes the scale/lines smaller. scale_border_width and scale_end_border_width allow to draw an arc on the outer part of the scale lines.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gauge</span></code>: <code class="docutils literal notranslate"><span class="pre">lv_gauge_set_needle_img</span></code> allows use image as needle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">canvas</span></code>: allow drawing to true color alpha and alpha only canvas, add <code class="docutils literal notranslate"><span class="pre">lv_canvas_blur_hor/ver</span></code> and rename <code class="docutils literal notranslate"><span class="pre">lv_canvas_rotate</span></code> to <code class="docutils literal notranslate"><span class="pre">lv_canvas_transform</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">textarea</span></code>: If available in the font use bullet (<code class="docutils literal notranslate"><span class="pre">U+2022</span></code>) character in text area password</p></li>
+</ul>
+</div>
+<div class="section" id="new-object-types">
+<h3>New object types<a class="headerlink" href="#new-object-types" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_objmask</span></code>: masks can be added to it. The children will be masked accordingly.</p></li>
+</ul>
+</div>
+<div class="section" id="others">
+<h3>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Change the built-in fonts to <a class="reference external" href="https://fonts.google.com/specimen/Montserrat">Montserrat</a> and add built-in fonts from 12 px to 48 px for every 2nd size.</p></li>
+<li><p>Add example CJK and Arabic/Persian/Hebrew built-in font</p></li>
+<li><p>Add ° and &quot;bullet&quot; to the built-in fonts</p></li>
+<li><p>Add Arabic/Persian script support: change the character according to its position in the text.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">playback_time</span></code> to animations.</p></li>
+<li><p>Add <code class="docutils literal notranslate"><span class="pre">repeat_count</span></code> to animations instead of the current &quot;repeat forever&quot;.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">LV_LAYOUT_PRETTY</span></code> with <code class="docutils literal notranslate"><span class="pre">LV_LAYOUT_PRETTY_TOP/MID/BOTTOM</span></code></p></li>
+</ul>
+</div>
+<div class="section" id="demos">
+<h3>Demos<a class="headerlink" href="#demos" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/littlevgl/lv_examples">lv_examples</a> was reworked and new examples and demos were added</p></li>
+</ul>
+</div>
+<div class="section" id="id30">
+<h3>New release policy<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Maintain this Changelog for every release</p></li>
+<li><p>Save old major version in new branches. E.g. <code class="docutils literal notranslate"><span class="pre">release/v6</span></code></p></li>
+<li><p>Merge new features and fixes directly into <code class="docutils literal notranslate"><span class="pre">master</span></code> and release a patch or minor releases every 2 weeks.</p></li>
+</ul>
+</div>
+<div class="section" id="migrating-from-v6-to-v7">
+<h3>Migrating from v6 to v7<a class="headerlink" href="#migrating-from-v6-to-v7" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>First and foremost, create a new <code class="docutils literal notranslate"><span class="pre">lv_conf.h</span></code> based on <code class="docutils literal notranslate"><span class="pre">lv_conf_template.h</span></code>.</p></li>
+<li><p>To try the new version it suggested using a simulator project and see the examples.</p></li>
+<li><p>If you have a running project, the most difficult part of the migration is updating to the new style system. Unfortunately, there is no better way than manually updating to the new format.</p></li>
+<li><p>The other parts are mainly minor renames and refactoring as described above.</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="ROADMAP.html" class="btn btn-neutral float-right" title="Roadmap" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="CONTRIBUTING.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, LVGL LLC.
+      <span class="lastupdated">
+        Last updated on Jan 10, 2022.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+
+<style>
+  .wy-side-nav-search > div[role="search"] {
+    color: black;
+  }
+</style>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<script type="text/javascript">
+function add_version_selector()
+{
+    return fetch("https://raw.githubusercontent.com/lvgl/docs_compiled/gh-pages/versionlist.txt")
+        .then(res => res.text())
+        .then(text => {
+            const versions = text.split("\n").filter(version => version.trim().length > 0);
+            let p = document.getElementById("rtd-search-form").parentElement;
+            p.innerHTML = `
+            <select name="versions" id="versions" onchange="ver_sel()" style="border-radius:5px; margin-bottom:15px">
+            ${versions.map(version => {
+                const versionName = "v" + ((version.indexOf(".") != -1) ? version : (version + " (latest minor)"));
+                return `<option value="${version}">${versionName}</option>`;
+            })}
+            </select>` + p.innerHTML;
+        });
+}
+
+function ver_sel()
+{
+  var x = document.getElementById("versions").value;
+  window.location.href = window.location.protocol + "//" + window.location.host + "/" + x + "/";
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    add_version_selector().then(() => {
+        var value = window.location.pathname.split('/')[1];
+        document.getElementById("versions").value = value;
+    });
+    
+})
+</script>
+
+
+</body>
+</html>

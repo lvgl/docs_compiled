@@ -1,0 +1,10 @@
+.. _latin1tab_h:
+
+===========
+latin1tab.h
+===========
+
+
+.. doxygenfile:: latin1tab.h
+    :project: lvgl
+

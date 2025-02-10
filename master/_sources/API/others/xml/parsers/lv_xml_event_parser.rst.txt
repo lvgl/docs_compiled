@@ -1,0 +1,10 @@
+.. _lv_xml_event_parser_h:
+
+=====================
+lv_xml_event_parser.h
+=====================
+
+
+.. doxygenfile:: lv_xml_event_parser.h
+    :project: lvgl
+

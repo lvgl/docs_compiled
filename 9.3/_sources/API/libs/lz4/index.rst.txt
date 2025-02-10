@@ -1,0 +1,10 @@
+===
+lz4
+===
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lz4
+

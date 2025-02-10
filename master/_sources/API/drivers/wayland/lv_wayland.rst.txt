@@ -1,0 +1,10 @@
+.. _lv_wayland_h:
+
+============
+lv_wayland.h
+============
+
+
+.. doxygenfile:: lv_wayland.h
+    :project: lvgl
+

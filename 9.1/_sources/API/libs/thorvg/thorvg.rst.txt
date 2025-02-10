@@ -1,0 +1,10 @@
+.. _thorvg:
+
+========
+thorvg.h
+========
+
+
+.. doxygenfile:: thorvg.h
+    :project: lvgl
+

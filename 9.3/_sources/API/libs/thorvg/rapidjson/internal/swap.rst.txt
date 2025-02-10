@@ -1,0 +1,10 @@
+.. _swap_h:
+
+======
+swap.h
+======
+
+
+.. doxygenfile:: swap.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _inttypes:
+
+==========
+inttypes.h
+==========
+
+
+.. doxygenfile:: inttypes.h
+    :project: lvgl
+

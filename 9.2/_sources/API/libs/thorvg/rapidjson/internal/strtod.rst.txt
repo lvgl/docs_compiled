@@ -1,0 +1,10 @@
+.. _strtod:
+
+========
+strtod.h
+========
+
+
+.. doxygenfile:: strtod.h
+    :project: lvgl
+

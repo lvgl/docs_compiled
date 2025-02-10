@@ -1,0 +1,10 @@
+.. _config_h:
+
+========
+config.h
+========
+
+
+.. doxygenfile:: config.h
+    :project: lvgl
+

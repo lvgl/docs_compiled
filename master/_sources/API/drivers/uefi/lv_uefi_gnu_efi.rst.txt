@@ -1,0 +1,10 @@
+.. _lv_uefi_gnu_efi_h:
+
+=================
+lv_uefi_gnu_efi.h
+=================
+
+
+.. doxygenfile:: lv_uefi_gnu_efi.h
+    :project: lvgl
+

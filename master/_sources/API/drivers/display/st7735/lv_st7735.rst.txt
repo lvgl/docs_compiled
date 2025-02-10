@@ -1,0 +1,10 @@
+.. _lv_st7735_h:
+
+===========
+lv_st7735.h
+===========
+
+
+.. doxygenfile:: lv_st7735.h
+    :project: lvgl
+

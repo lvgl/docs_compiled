@@ -1,0 +1,10 @@
+.. _tvgRawLoader_h:
+
+==============
+tvgRawLoader.h
+==============
+
+
+.. doxygenfile:: tvgRawLoader.h
+    :project: lvgl
+

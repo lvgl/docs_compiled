@@ -1,0 +1,10 @@
+.. _rapidjson:
+
+===========
+rapidjson.h
+===========
+
+
+.. doxygenfile:: rapidjson.h
+    :project: lvgl
+

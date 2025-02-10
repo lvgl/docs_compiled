@@ -1,0 +1,10 @@
+.. _lv_xml_slider_parser_h:
+
+======================
+lv_xml_slider_parser.h
+======================
+
+
+.. doxygenfile:: lv_xml_slider_parser.h
+    :project: lvgl
+

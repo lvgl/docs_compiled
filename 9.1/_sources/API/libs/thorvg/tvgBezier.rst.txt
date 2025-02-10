@@ -1,0 +1,10 @@
+.. _tvgBezier:
+
+===========
+tvgBezier.h
+===========
+
+
+.. doxygenfile:: tvgBezier.h
+    :project: lvgl
+

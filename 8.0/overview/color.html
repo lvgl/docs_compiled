@@ -1,0 +1,2156 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Colors &mdash; LVGL  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/custom.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/css/fontawesome.min.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+
+  
+  
+
+  
+    <link rel="canonical" href="https://docs.lvgl.io/v8.0/en/html/overview/color.html" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Fonts" href="font.html" />
+    <link rel="prev" title="Displays" href="display.html" />
+ 
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-78811084-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+	gtag('config', 'UA-78811084-3', { 'anonymize_ip': true });
+</script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html">
+          
+
+          
+            
+            <img src="../_static/logo_lvgl.png" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                8.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../intro/index.html">Introduction</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#key-features">Key features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#license">License</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#repository-layout">Repository layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#release-policy">Release policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#release-cycle">Release cycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#branches">Branches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#changelog">Changelog</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#version-support">Version support</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/index.html#faq">FAQ</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#where-can-i-ask-questions">Where can I ask questions?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#is-my-mcu-hardware-supported">Is my MCU/hardware supported?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#is-my-display-supported">Is my display supported?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#nothing-happens-my-display-driver-is-not-called-what-have-i-missed">Nothing happens, my display driver is not called. What have I missed?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#why-is-the-display-driver-called-only-once-only-the-upper-part-of-the-display-is-refreshed">Why is the display driver called only once? Only the upper part of the display is refreshed.</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#why-do-i-see-only-garbage-on-the-screen">Why do I see only garbage on the screen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#why-i-see-nonsense-colors-on-the-screen">Why I see nonsense colors on the screen?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#how-to-speed-up-my-ui">How to speed up my UI?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#how-to-reduce-flash-rom-usage">How to reduce flash/ROM usage?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#how-to-reduce-the-ram-usage">How to reduce the RAM usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/index.html#how-to-work-with-an-operating-system">How to work with an operating system?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../get-started/index.html">Get started</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/quick-overview.html">Quick overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/quick-overview.html#get-started-in-a-simulator">Get started in a simulator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/quick-overview.html#add-lvgl-into-your-project">Add LVGL into your project</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/quick-overview.html#learn-the-basics">Learn the basics</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#widgets">Widgets</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#parts">Parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#states">States</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#styles">Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#themes">Themes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/quick-overview.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/quick-overview.html#id1">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/quick-overview.html#micropython">Micropython</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/pc-simulator.html">Simulator on PC</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/pc-simulator.html#select-an-ide">Select an IDE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/pc-simulator.html#set-up-eclipse-cdt">Set-up Eclipse CDT</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/pc-simulator.html#install-eclipse-cdt">Install Eclipse CDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/pc-simulator.html#install-sdl-2">Install SDL 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/pc-simulator.html#pre-configured-project">Pre-configured project</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/pc-simulator.html#add-the-pre-configured-project-to-eclipse-cdt">Add the pre-configured project to Eclipse CDT</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/pc-simulator.html#compile-and-run">Compile and Run</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/stm32.html">STM32</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/nxp.html">NXP</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nxp.html#creating-new-project-with-lvgl">Creating new project with LVGL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nxp.html#adding-hw-acceleration-for-nxp-imx-rt-platforms-using-pxp-pixel-pipeline-engine-for-existing-projects">Adding HW acceleration for NXP iMX RT platforms using PXP (PiXel Pipeline) engine for existing projects</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nxp.html#features-supported">Features supported:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nxp.html#basic-configuration">Basic configuration:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nxp.html#basic-initialization">Basic initialization:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nxp.html#project-setup">Project setup:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nxp.html#advanced-configuration">Advanced configuration:</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/espressif.html">Espressif (ESP32)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/espressif.html#get-the-lvgl-demo-project-for-esp32">Get the LVGL demo project for ESP32</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/espressif.html#use-lvgl-in-your-esp32-project">Use LVGL in your ESP32 project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/espressif.html#prerequisites">Prerequisites</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/espressif.html#get-lvgl">Get LVGL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/espressif.html#use-lvgl-esp32-drivers-in-your-project">Use lvgl_esp32_drivers in your project</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/espressif.html#support-for-esp32-s2">Support for ESP32-S2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/arduino.html">Arduino</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#get-the-lvgl-ardunio-library">Get the LVGL Ardunio library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#set-up-drivers">Set up drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#configure-lvgl">Configure LVGL</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#configure-the-examples">Configure the examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#initialize-lvgl-and-run-an-example">Initialize LVGL and run an example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/arduino.html#debugging-and-logging">Debugging and logging</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/micropython.html">Micropython</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/micropython.html#what-is-micropython">What is Micropython?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#highlights-of-micropython">Highlights of Micropython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/micropython.html#why-micropython-lvgl">Why Micropython + LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#here-are-some-advantages-of-using-lvgl-in-micropython">Here are some advantages of using LVGL in Micropython:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#micropython-lvgl-could-be-used-for">Micropython + LVGL could be used for:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/micropython.html#so-what-does-it-look-like">So what does it look like?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#a-simple-example">A simple example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/micropython.html#how-can-i-use-it">How can I use it?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#online-simulator">Online Simulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#pc-simulator">PC Simulator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/micropython.html#embedded-platform">Embedded platform</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/micropython.html#where-can-i-find-more-information">Where can I find more information?</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../get-started/nuttx.html">NuttX RTOS</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nuttx.html#what-is-nuttx">What is NuttX?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#highlights-of-nuttx">Highlights of NuttX</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nuttx.html#why-nuttx-lvgl">Why NuttX + LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#here-are-some-advantages-of-using-lvgl-in-nuttx">Here are some advantages of using LVGL in NuttX</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#nuttx-lvgl-could-be-used-for">NuttX + LVGL could be used for</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nuttx.html#how-to-get-started-with-nuttx-and-lvgl">How to get started with NuttX and LVGL?</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#first-you-need-to-install-the-pre-requisite-on-your-system">First you need to install the pre-requisite on your system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#now-let-s-to-create-a-workspace-to-save-our-files">Now let's to create a workspace to save our files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#clone-the-nuttx-and-apps-repositories">Clone the NuttX and Apps repositories:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#configure-nuttx-to-use-the-stm32f429i-disco-board-and-the-lvgl-demo">Configure NuttX to use the stm32f429i-disco board and the LVGL Demo</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../get-started/nuttx.html#flashing-the-firmware-in-the-board-using-openocd">Flashing the firmware in the board using OpenOCD:</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../get-started/nuttx.html#where-can-i-find-more-information">Where can I find more information?</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../porting/index.html">Porting</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../porting/project.html">Set-up a project</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/project.html#get-the-library">Get the library</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/project.html#configuration-file">Configuration file</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/project.html#initialization">Initialization</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/display.html">Display interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/display.html#draw-buffer">Draw buffer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/display.html#display-driver">Display driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../porting/display.html#mandatory-fields">Mandatory fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/display.html#optional-fields">Optional fields</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/display.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/display.html#rotation">Rotation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/display.html#further-reading">Further reading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/display.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/indev.html">Input device interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/indev.html#types-of-input-devices">Types of input devices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#touchpad-mouse-or-any-pointer">Touchpad, mouse or any pointer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#keypad-or-keyboard">Keypad or keyboard</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#encoder">Encoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#button">Button</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/indev.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#parameters">Parameters</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#feedback">Feedback</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#associating-with-a-display">Associating with a display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/indev.html#buffered-reading">Buffered reading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/indev.html#further-reading">Further reading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/indev.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/tick.html">Tick interface</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/tick.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/task-handler.html">Task Handler</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/sleep.html">Sleep management</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/os.html">Operating system and interrupts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/os.html#tasks-and-threads">Tasks and threads</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/os.html#interrupts">Interrupts</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../porting/log.html">Logging</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../porting/log.html#log-level">Log level</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/log.html#printing-logs">Printing logs</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../porting/log.html#logging-with-printf">Logging with printf</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../porting/log.html#custom-log-function">Custom log function</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../porting/log.html#add-logs">Add logs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Overview</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="object.html">Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="object.html#attributes">Attributes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="object.html#basic-attributes">Basic attributes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#specific-attributes">Specific attributes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="object.html#working-mechanisms">Working mechanisms</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="object.html#parent-child-structure">Parent-child structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#moving-together">Moving together</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#visibility-only-on-the-parent">Visibility only on the parent</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#create-and-delete-objects">Create and delete objects</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="object.html#screens">Screens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="object.html#create-screens">Create screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#get-the-active-screen">Get the active screen</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#load-screens">Load screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#layers">Layers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="object.html#handling-multiple-displays">Handling multiple displays</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="object.html#parts">Parts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="object.html#states">States</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="coords.html">Positions, sizes, and layouts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#units">Units</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#boxing-model">Boxing model</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#important-notes">Important notes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#position">Position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#simple-way">Simple way</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#align">Align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#size">Size</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#id1">Simple way</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#using-styles">Using styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#translation">Translation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#transformation">Transformation</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#min-and-max-size">Min and Max size</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#layout">Layout</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#id2">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#built-in-layout">Built-in layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#flags">Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="coords.html#adding-new-layouts">Adding new layouts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="coords.html#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style.html">Styles</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style.html#states">States</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#cascading-styles">Cascading styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#inheritance">Inheritance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#parts">Parts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#initialize-styles-and-set-get-properties">Initialize styles and set/get properties</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#add-and-remove-styles-to-a-widget">Add and remove styles to a widget</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style.html#add-styles">Add styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style.html#remove-styles">Remove styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style.html#report-style-changes">Report style changes</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style.html#get-a-property-s-value-on-an-object">Get a property's value on an object</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#local-styles">Local styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#properties">Properties</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style.html#typical-background-properties">Typical background properties</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#transitions">Transitions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#color-filter">Color filter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#themes">Themes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style.html#extending-themes">Extending themes</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="style-props.html">Style properties</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#size-and-position">Size and position</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#width">width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#min-width">min_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#max-width">max_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#height">height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#min-height">min_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#max-height">max_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#x">x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#y">y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#align">align</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#transform-width">transform_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#transform-height">transform_height</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#translate-x">translate_x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#translate-y">translate_y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#transform-zoom">transform_zoom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#transform-angle">transform_angle</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#padding">Padding</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-top">pad_top</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-bottom">pad_bottom</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-left">pad_left</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-right">pad_right</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-row">pad_row</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#pad-column">pad_column</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#miscellaneous">Miscellaneous</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#radius">radius</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#clip-corner">clip_corner</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#opa">opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#color-filter-dsc">color_filter_dsc</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#color-filter-opa">color_filter_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#anim-time">anim_time</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#anim-speed">anim_speed</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#transition">transition</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#blend-mode">blend_mode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#layout">layout</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#base-dir">base_dir</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#background">Background</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-color">bg_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-opa">bg_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-grad-color">bg_grad_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-grad-dir">bg_grad_dir</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-main-stop">bg_main_stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-grad-stop">bg_grad_stop</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-img-src">bg_img_src</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-img-opa">bg_img_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-img-recolor">bg_img_recolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-img-recolor-opa">bg_img_recolor_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#bg-img-tiled">bg_img_tiled</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#border">Border</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#border-color">border_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#border-opa">border_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#border-width">border_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#border-side">border_side</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#border-post">border_post</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#text">Text</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-color">text_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-opa">text_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-font">text_font</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-letter-space">text_letter_space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-line-space">text_line_space</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-decor">text_decor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#text-align">text_align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#image">Image</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#img-opa">img_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#img-recolor">img_recolor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#img-recolor-opa">img_recolor_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#outline">Outline</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#outline-width">outline_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#outline-color">outline_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#outline-opa">outline_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#outline-pad">outline_pad</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#shadow">Shadow</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-width">shadow_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-ofs-x">shadow_ofs_x</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-ofs-y">shadow_ofs_y</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-spread">shadow_spread</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-color">shadow_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#shadow-opa">shadow_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#line">Line</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-width">line_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-dash-width">line_dash_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-dash-gap">line_dash_gap</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-rounded">line_rounded</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-color">line_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#line-opa">line_opa</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="style-props.html#arc">Arc</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#arc-width">arc_width</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#arc-rounded">arc_rounded</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#arc-color">arc_color</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#arc-opa">arc_opa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="style-props.html#arc-img-src">arc_img_src</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="scroll.html">Scroll</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scrollbar">Scrollbar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#events">Events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#basic-example">Basic example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#features-of-scrolling">Features of scrolling</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scrollable">Scrollable</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scroll-chain">Scroll chain</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scroll-momentum">Scroll momentum</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#elastic-scroll">Elastic scroll</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#snapping">Snapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scroll-one">Scroll one</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#scroll-on-focus">Scroll on focus</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#scroll-manually">Scroll manually</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#self-size">Self size</a></li>
+<li class="toctree-l3"><a class="reference internal" href="scroll.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="scroll.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="layer.html">Layers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="layer.html#order-of-creation">Order of creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html#bring-to-the-foreground">Bring to the foreground</a></li>
+<li class="toctree-l3"><a class="reference internal" href="layer.html#top-and-sys-layers">Top and sys layers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="event.html">Events</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="event.html#add-events-to-the-object">Add events to the object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#remove-event-s-from-an-object">Remove event(s) from an object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#event-codes">Event codes</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="event.html#input-device-events">Input device events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html#drawing-events">Drawing events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html#other-events">Other events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html#special-events">Special events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html#custom-events">Custom events</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#sending-events">Sending events</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="event.html#refresh-event">Refresh event</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#fields-of-lv-event-t">Fields of lv_event_t</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#event-bubbling">Event bubbling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="event.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="event.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="event.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="indev.html">Input devices</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="indev.html#pointers">Pointers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="indev.html#keypad-and-encoder">Keypad and encoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="indev.html#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indev.html#styling">Styling</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="indev.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="indev.html#input-device">Input device</a></li>
+<li class="toctree-l4"><a class="reference internal" href="indev.html#id1">Groups</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="display.html">Displays</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="display.html#multiple-display-support">Multiple display support</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="display.html#using-only-one-display">Using only one display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html#mirror-display">Mirror display</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html#split-image">Split image</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="display.html#screens">Screens</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="display.html#transparent-screens">Transparent screens</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="display.html#features-of-displays">Features of displays</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="display.html#inactivity">Inactivity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="display.html#background">Background</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="display.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Colors</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#creating-colors">Creating colors</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#rgb">RGB</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#hsv">HSV</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#palette">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#modify-and-mix-colors">Modify and mix colors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#built-in-colors">Built-in colors</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#opacity">Opacity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#color-types">Color types</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#convert-color">Convert color</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="font.html">Fonts</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="font.html#unicode-support">Unicode support</a></li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#built-in-fonts">Built-in fonts</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="font.html#normal-fonts">Normal fonts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="font.html#special-fonts">Special fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#special-features">Special features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="font.html#bidirectional-support">Bidirectional support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="font.html#arabic-and-persian-support">Arabic and Persian support</a></li>
+<li class="toctree-l4"><a class="reference internal" href="font.html#subpixel-rendering">Subpixel rendering</a></li>
+<li class="toctree-l4"><a class="reference internal" href="font.html#compress-fonts">Compress fonts</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#add-new-font">Add new font</a></li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#add-new-symbols">Add new symbols</a></li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#load-font-at-run-time">Load font at run-time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="font.html#add-a-new-font-engine">Add a new font engine</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="image.html">Images</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="image.html#store-images">Store images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="image.html#variables">Variables</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#files">Files</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image.html#color-formats">Color formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="image.html#add-and-use-images">Add and use images</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="image.html#online-converter">Online converter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#manually-create-an-image">Manually create an image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#use-images">Use images</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image.html#image-decoder">Image decoder</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="image.html#custom-image-formats">Custom image formats</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#register-an-image-decoder">Register an image decoder</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#manually-use-an-image-decoder">Manually use an image decoder</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image.html#image-caching">Image caching</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="image.html#cache-size">Cache size</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#value-of-images">Value of images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#memory-usage">Memory usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="image.html#clean-the-cache">Clean the cache</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image.html#api">API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="image.html#image-buffer">Image buffer</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="file-system.html">File system</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="file-system.html#ready-to-use-drivers">Ready to use drivers</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-system.html#add-a-driver">Add a driver</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="file-system.html#registering-a-driver">Registering a driver</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file-system.html#implementing-the-callbacks">Implementing the callbacks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="file-system.html#other-callbacks">Other callbacks</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="file-system.html#usage-example">Usage example</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-system.html#use-drivers-for-images">Use drivers for images</a></li>
+<li class="toctree-l3"><a class="reference internal" href="file-system.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="animation.html">Animations</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#create-an-animation">Create an animation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#animation-path">Animation path</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#speed-vs-time">Speed vs time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#delete-animations">Delete animations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#examples">Examples</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="animation.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="animation.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="animation.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html">Timers</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#create-a-timer">Create a timer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#ready-and-reset">Ready and Reset</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#set-parameters">Set parameters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#repeat-count">Repeat count</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#measure-idle-time">Measure idle time</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#asynchronous-calls">Asynchronous calls</a></li>
+<li class="toctree-l3"><a class="reference internal" href="timer.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="drawing.html">Drawing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="drawing.html#mechanism-of-screen-refreshing">Mechanism of screen refreshing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawing.html#masking">Masking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="drawing.html#hook-drawing">Hook drawing</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="drawing.html#main-drawing">Main drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drawing.html#post-drawing">Post drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drawing.html#part-drawing">Part drawing</a></li>
+<li class="toctree-l4"><a class="reference internal" href="drawing.html#others">Others</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="new_widget.html">New widget</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../widgets/index.html">Widgets</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../widgets/obj.html">Base object (lv_obj)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/obj.html#overview">Overview</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#coordinates">Coordinates</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#parents-and-children">Parents and children</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#screens">Screens</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#styles">Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#flags">Flags</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#groups">Groups</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#extended-click-area">Extended click area</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/obj.html#id1">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/obj.html#keys">Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/obj.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/obj.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/obj.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../widgets/core/index.html">Core widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/arc.html">Arc (lv_arc)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/arc.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/bar.html">Bar (lv_bar)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/bar.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/btn.html">Button (lv_btn)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btn.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/btnmatrix.html">Button matrix (lv_btnmatrix)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/btnmatrix.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/canvas.html">Canvas (lv_canvas)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/canvas.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/checkbox.html">Checkbox (lv_checkbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/checkbox.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/dropdown.html">Drop-down list (lv_dropdown)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#id1">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/dropdown.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/img.html">Image (lv_img)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#transformations">Transformations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/img.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/label.html">Label (lv_label)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/label.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/line.html">Line (lv_line)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/line.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/roller.html">Roller (lv_roller)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/roller.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/slider.html">Slider (lv_slider)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/slider.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/switch.html">Switch (lv_switch)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/switch.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/table.html">Table (lv_table)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/table.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/core/textarea.html">Text area (lv_textarea)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/core/textarea.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../widgets/extra/index.html">Extra widgets</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/calendar.html">Calendar (lv_calendar)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#headers">Headers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/calendar.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/chart.html">Chart (lv_chart)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/chart.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/colorwheel.html">Color wheel (lv_colorwheel)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/colorwheel.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/imgbtn.html">Image button (lv_imgbtn)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/imgbtn.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/keyboard.html">Keyboard (lv_keyboard)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#examples">Examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/keyboard.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/led.html">LED (lv_led)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/led.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/list.html">List (lv_list)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/list.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/meter.html">Meter (lv_meter)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/meter.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/msgbox.html">Message box (lv_msgbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/msgbox.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/span.html">Span (lv_span)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/span.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/spinbox.html">Spinbox (lv_spinbox)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#api">API</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinbox.html#id1">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/spinner.html">Spinner (lv_spinner)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/spinner.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/tabview.html">Tabview (lv_tabview)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tabview.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/tileview.html">Tile view (lv_tileview)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/tileview.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../widgets/extra/win.html">Window (lv_win)</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#overview">Overview</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#parts-and-styles">Parts and Styles</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#usage">Usage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#get-the-parts">Get the parts</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#events">Events</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#keys">Keys</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#example">Example</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../widgets/extra/win.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../layouts/index.html">Layouts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../layouts/flex.html">Flex</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#terms">Terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#simple-interface">Simple interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#flex-flow">Flex flow</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#flex-align">Flex align</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#flex-grow">Flex grow</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#style-interface">Style interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#rtl">RTL</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#new-track">New track</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/flex.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/flex.html#api">API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../layouts/grid.html">Grid</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#terms">Terms</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#simple-interface">Simple interface</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#grid-descriptors">Grid descriptors</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#grid-items">Grid items</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#grid-align">Grid align</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#style-interface">Style interface</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#other-features">Other features</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#rtl">RTL</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#example">Example</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#c">C</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../layouts/grid.html#micropython">MicroPython</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../layouts/grid.html#api">API</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CONTRIBUTING.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#introduction">Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#pull-request">Pull request</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#from-github">From GitHub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#from-command-line">From command line</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#developer-certification-of-origin-dco">Developer Certification of Origin (DCO)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#overview">Overview</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#accepted-licenses-and-copyright-notices">Accepted licenses and copyright notices</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="../CONTRIBUTING.html#your-own-work">Your own work</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CONTRIBUTING.html#use-code-from-online-source">Use code from online source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CONTRIBUTING.html#use-mit-licensed-code">Use MIT licensed code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../CONTRIBUTING.html#use-gpl-licensed-code">Use GPL licensed code</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CONTRIBUTING.html#ways-to-contribute">Ways to contribute</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#give-lvgl-a-star">Give LVGL a Star</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#tell-what-you-have-achieved">Tell what you have achieved</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#write-examples">Write examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#improve-the-docs">Improve the docs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#report-bugs">Report bugs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#send-fixes">Send fixes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#join-the-conversations-in-the-forum">Join the conversations in the Forum</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#add-features">Add features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#become-a-maintainer">Become a maintainer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CONTRIBUTING.html#move-your-project-repository-under-lvgl-organization">Move your project repository under LVGL organization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v8-0-2-16-07-2021">v8.0.2 (16.07.2021)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v8-0-1-14-06-2021">v8.0.1 (14.06.2021)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v8-0-0-01-06-2021">v8.0.0 (01.06.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#directory-structure">Directory structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#widget-changes">Widget changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-scrolling">New scrolling</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-layouts">New layouts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#styles">Styles</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#events">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#driver-changes">Driver changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#other-changes">Other changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-release-policy">New release policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#migrating-from-v7-to-v8">Migrating from v7 to v8</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-11-0-16-03-2021">v7.11.0 (16.03.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-features">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#bugfixes">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-10-1-16-02-2021">v7.10.1 (16.02.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id1">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-10-0-02-02-2021">v7.10.0 (02.02.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id2">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id3">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-9-1-19-01-2021">v7.9.1 (19.01.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id4">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-9-0-05-01-2021">v7.9.0 (05.01.2021)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id5">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id6">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-8-1-15-12-2020">v7.8.1 (15.12.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id7">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-8-0-01-12-2020">v7.8.0 (01.12.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id8">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id9">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-7-2-17-11-2020">v7.7.2 (17.11.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id10">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-7-1-03-11-2020">v7.7.1 (03.11.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id11">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-7-0-20-10-2020">v7.7.0 (20.10.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id12">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id13">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-6-1-06-10-2020">v7.6.1 (06.10.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id14">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-6-0-22-09-2020">v7.6.0 (22.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id15">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id16">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-5-0-15-09-2020">v7.5.0 (15.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id17">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id18">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-4-0-01-09-2020">v7.4.0 (01.09.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id19">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id20">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-3-1-18-08-2020">v7.3.1 (18.08.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id21">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-3-0-04-08-2020">v7.3.0 (04.08.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id22">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id23">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-2-0-21-07-2020">v7.2.0 (21.07.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id24">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id25">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-1-0-07-07-2020">v7.1.0 (07.07.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id26">New features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id27">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-0-2-16-06-2020">v7.0.2 (16.06.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id28">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-0-1-01-06-2020">v7.0.1 (01.06.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id29">Bugfixes</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../CHANGELOG.html#v7-0-0-18-05-2020">v7.0.0 (18.05.2020)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#documentation">Documentation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#legal-changes">Legal changes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-drawing-system">New drawing system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-style-system">New style system</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#gpu-integration">GPU integration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#renames">Renames</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#reworked-and-improved-object">Reworked and improved object</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#new-object-types">New object types</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#others">Others</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#demos">Demos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#id30">New release policy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../CHANGELOG.html#migrating-from-v6-to-v7">Migrating from v6 to v7</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ROADMAP.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../ROADMAP.html#v8-x">v8.X</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ROADMAP.html#ideas">Ideas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../ROADMAP.html#v8">v8</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LVGL</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="index.html">Overview</a> &raquo;</li>
+        
+      <li>Colors</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            
+              <!-- User defined GitHub URL -->
+              <a href="https://github.com/lvgl/lvgl/blob/5d0ba633a5dc8bb1c3e3714461b6839f205a69fa/docs/overview/color.md" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="colors">
+<h1>Colors<a class="headerlink" href="#colors" title="Permalink to this headline">¶</a></h1>
+<p>The color module handles all color-related functions like changing color depth, creating colors from hex code, converting between color depths, mixing colors, etc.</p>
+<p><code class="docutils literal notranslate"><span class="pre">lv_color_t</span></code> is used to store a color, its fileds are set according to <code class="docutils literal notranslate"><span class="pre">LV_COLOR_DEPTH</span></code> in <code class="docutils literal notranslate"><span class="pre">lv_conf.h</span></code>. (See below)</p>
+<p>You may set <code class="docutils literal notranslate"><span class="pre">LV_COLOR_16_SWAP</span></code> in <code class="docutils literal notranslate"><span class="pre">lv_conf.h</span></code> to swap the bytes of <em>RGB565</em> colors. You may need this to send the 16-bit colors via a byte-oriented interface like SPI. As 16-bit numbers are stored in Little Endian format (lower byte on the lower address), the interface will send the lower byte first. However, displays usually need the higher byte first. A mismatch in the byte order will result in highly distorted colors.</p>
+<div class="section" id="creating-colors">
+<h2>Creating colors<a class="headerlink" href="#creating-colors" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="rgb">
+<h3>RGB<a class="headerlink" href="#rgb" title="Permalink to this headline">¶</a></h3>
+<p>Create colors from Red, Green and Blue channel values</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//All channels are 0-255</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_make</span><span class="p">(</span><span class="n">red</span><span class="p">,</span> <span class="n">green</span><span class="p">,</span> <span class="n">blue</span><span class="p">);</span>
+
+<span class="c1">//From hex code 0x000000..0xFFFFFF interpreted as RED + GREEN + BLUE</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_hex</span><span class="p">(</span><span class="mh">0x123456</span><span class="p">);</span> 
+
+<span class="c1">//From 3 digits. Same as lv_color_hex(0x112233)</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_hex3</span><span class="p">(</span><span class="mh">0x123</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="section" id="hsv">
+<h3>HSV<a class="headerlink" href="#hsv" title="Permalink to this headline">¶</a></h3>
+<p>Create colors from Hue, Saturation and Value values</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">//h = 0..359, s = 0..100, v = 0..100</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_hsv_to_rgb</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">v</span><span class="p">);</span>
+
+<span class="c1">//All channels are 0-255</span>
+<span class="n">lv_color_hsv_t</span> <span class="n">c_hsv</span> <span class="o">=</span> <span class="n">lv_color_rgb_to_hsv</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">g</span><span class="p">,</span> <span class="n">b</span><span class="p">);</span>
+
+
+<span class="c1">//From lv_color_t variable</span>
+<span class="n">lv_color_hsv_t</span> <span class="n">c_hsv</span> <span class="o">=</span> <span class="n">lv_color_to_hsv</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="palette">
+<h3>Palette<a class="headerlink" href="#palette" title="Permalink to this headline">¶</a></h3>
+<p>LVGL includes <a class="reference external" href="https://vuetifyjs.com/en/styles/colors/#material-colors">material design's palette</a>. In this all color have a main as well as four darker and five lighter variants.</p>
+<p>The names of the colors are as follows:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_RED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_PINK</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_PURPLE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_DEEP_PURPLE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_INDIGO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_BLUE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_LIGHT_BLUE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_CYAN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_TEAL</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_GREEN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_LIGHT_GREEN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_LIME</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_YELLOW</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_AMBER</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_ORANGE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_DEEP_ORANGE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_BROWN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_BLUE_GREY</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_PALETTE_GREY</span></code></p></li>
+</ul>
+<p>To get the main color use <code class="docutils literal notranslate"><span class="pre">lv_color_t</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">lv_palette_main(LV_PALETTE_...)</span></code>.</p>
+<p>For the lighter variants of a palette color use <code class="docutils literal notranslate"><span class="pre">lv_color_t</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">lv_palette_lighten(LV_PALETTE_...,</span> <span class="pre">v)</span></code>. <code class="docutils literal notranslate"><span class="pre">v</span></code> can be 1..5.
+For the darker variants of a palette color use <code class="docutils literal notranslate"><span class="pre">lv_color_t</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">lv_palette_darken(LV_PALETTE_...,</span> <span class="pre">v)</span></code>. <code class="docutils literal notranslate"><span class="pre">v</span></code> can be 1..4.</p>
+</div>
+<div class="section" id="modify-and-mix-colors">
+<h3>Modify and mix colors<a class="headerlink" href="#modify-and-mix-colors" title="Permalink to this headline">¶</a></h3>
+<p>The following functions can modify a color:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Lighten a color. 0: no change, 255: white</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_lighten</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">lvl</span><span class="p">);</span>
+
+<span class="c1">// Darken a color. 0: no change, 255: black</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_darken</span><span class="p">(</span><span class="n">lv_color_t</span> <span class="n">c</span><span class="p">,</span> <span class="n">lv_opa_t</span> <span class="n">lvl</span><span class="p">);</span>
+
+<span class="c1">// Lighten or darken a color. 0: black, 128: no change 255: black</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_change_lightness</span><span class="p">(</span><span class="n">lv_color_t</span> <span class="n">c</span><span class="p">,</span> <span class="n">lv_opa_t</span> <span class="n">lvl</span><span class="p">);</span>
+
+
+<span class="c1">// Mix 2 colors with a given ratio 0: full c2, 255: full c1, 128: half c1 and half c2</span>
+<span class="n">lv_color_t</span> <span class="n">c</span> <span class="o">=</span> <span class="n">lv_color_mix</span><span class="p">(</span><span class="n">c1</span><span class="p">,</span> <span class="n">c2</span><span class="p">,</span> <span class="n">ratio</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="built-in-colors">
+<h3>Built-in colors<a class="headerlink" href="#built-in-colors" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">lv_color_white()</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_color_black()</span></code> return <code class="docutils literal notranslate"><span class="pre">0xFFFFFF</span></code> and <code class="docutils literal notranslate"><span class="pre">0x000000</span></code> respectively.</p>
+</div>
+</div>
+<div class="section" id="opacity">
+<h2>Opacity<a class="headerlink" href="#opacity" title="Permalink to this headline">¶</a></h2>
+<p>To describe opacity the <code class="docutils literal notranslate"><span class="pre">lv_opa_t</span></code> type is created as a wrapper to <code class="docutils literal notranslate"><span class="pre">uint8_t</span></code>. Some defines are also introduced:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_OPA_TRANSP</span></code> Value: 0, means the opacity makes the color completely transparent</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_OPA_10</span></code> Value: 25, means the color covers only a little</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_OPA_20</span> <span class="pre">...</span> <span class="pre">OPA_80</span></code> come logically</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_OPA_90</span></code> Value: 229, means the color near completely covers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LV_OPA_COVER</span></code> Value: 255, means the color completely covers</p></li>
+</ul>
+<p>You can also use the <code class="docutils literal notranslate"><span class="pre">LV_OPA_*</span></code> defines in <code class="docutils literal notranslate"><span class="pre">lv_color_mix()</span></code> as a <em>ratio</em>.</p>
+</div>
+<div class="section" id="color-types">
+<h2>Color types<a class="headerlink" href="#color-types" title="Permalink to this headline">¶</a></h2>
+<p>The following variable types are defined by the color module:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color1_t</span></code> Monochrome color. Also has R, G, B fields for compatibility but they are always the same value (1 byte)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color8_t</span></code> A structure to store R (3 bit),G (3 bit),B (2 bit) components for 8-bit colors (1 byte)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color16_t</span></code> A structure to store R (5 bit),G (6 bit),B (5 bit) components for 16-bit colors (2 byte)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color32_t</span></code> A structure to store R (8 bit),G (8 bit), B (8 bit) components for 24-bit colors (4 byte)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color_t</span></code> Equal to <code class="docutils literal notranslate"><span class="pre">lv_color1/8/16/24_t</span></code> depending on current color depth setting</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_color_int_t</span></code> <code class="docutils literal notranslate"><span class="pre">uint8_t</span></code>, <code class="docutils literal notranslate"><span class="pre">uint16_t</span></code> or <code class="docutils literal notranslate"><span class="pre">uint32_t</span></code> depending on color depth setting. Used to build color arrays from plain numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lv_opa_t</span></code> A simple <code class="docutils literal notranslate"><span class="pre">uint8_t</span></code> type to describe opacity.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">lv_color_t</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_color1_t</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_color8_t</span></code>, <code class="docutils literal notranslate"><span class="pre">lv_color16_t</span></code> and <code class="docutils literal notranslate"><span class="pre">lv_color32_t</span></code> types have four fields:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.red</span></code> red channel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.green</span></code> green channel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ch.blue</span></code> blue channel</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">full*</span></code> red + green + blue as one number</p></li>
+</ul>
+<p>You can set the current color depth in <em>lv_conf.h</em>, by setting the <code class="docutils literal notranslate"><span class="pre">LV_COLOR_DEPTH</span></code> define to 1 (monochrome), 8, 16 or 32.</p>
+<div class="section" id="convert-color">
+<h3>Convert color<a class="headerlink" href="#convert-color" title="Permalink to this headline">¶</a></h3>
+<p>You can convert a color from the current color depth to another. The converter functions return with a number, so you have to use the <code class="docutils literal notranslate"><span class="pre">full</span></code> field:</p>
+<div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">lv_color_t</span> <span class="n">c</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">red</span>   <span class="o">=</span> <span class="mh">0x38</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">green</span> <span class="o">=</span> <span class="mh">0x70</span><span class="p">;</span>
+<span class="n">c</span><span class="p">.</span><span class="n">blue</span>  <span class="o">=</span> <span class="mh">0xCC</span><span class="p">;</span>
+
+<span class="n">lv_color1_t</span> <span class="n">c1</span><span class="p">;</span>
+<span class="n">c1</span><span class="p">.</span><span class="n">full</span> <span class="o">=</span> <span class="n">lv_color_to1</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>	<span class="cm">/*Return 1 for light colors, 0 for dark colors*/</span>
+
+<span class="n">lv_color8_t</span> <span class="n">c8</span><span class="p">;</span>
+<span class="n">c8</span><span class="p">.</span><span class="n">full</span> <span class="o">=</span> <span class="n">lv_color_to8</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>	<span class="cm">/*Give a 8 bit number with the converted color*/</span>
+
+<span class="n">lv_color16_t</span> <span class="n">c16</span><span class="p">;</span>
+<span class="n">c16</span><span class="p">.</span><span class="n">full</span> <span class="o">=</span> <span class="n">lv_color_to16</span><span class="p">(</span><span class="n">c</span><span class="p">);</span> <span class="cm">/*Give a 16 bit number with the converted color*/</span>
+
+<span class="n">lv_color32_t</span> <span class="n">c24</span><span class="p">;</span>
+<span class="n">c32</span><span class="p">.</span><span class="n">full</span> <span class="o">=</span> <span class="n">lv_color_to32</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>	<span class="cm">/*Give a 32 bit number with the converted color*/</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="api">
+<h2>API<a class="headerlink" href="#api" title="Permalink to this headline">¶</a></h2>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-typedefs">Typedefs</p>
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv420lv_color_filter_cb_t">
+<span id="_CPPv320lv_color_filter_cb_t"></span><span id="_CPPv220lv_color_filter_cb_t"></span><span id="lv_color_filter_cb_t"></span><span class="target" id="lv__color_8h_1a841724e0434bd4cb4d8f82e7339d07c8"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="p"><span class="pre">(</span></span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_filter_cb_t</span></span></span><span class="p"><span class="pre">)</span></span><span class="p"><span class="pre">(</span></span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv422_lv_color_filter_dsc_t" title="_lv_color_filter_dsc_t"><span class="n"><span class="pre">_lv_color_filter_dsc_t</span></span></a><span class="p"><span class="pre">*</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="n"><span class="pre">lv_opa_t</span></span><span class="p"><span class="pre">)</span></span><a class="headerlink" href="#_CPPv420lv_color_filter_cb_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt class="sig sig-object cpp" id="_CPPv421lv_color_filter_dsc_t">
+<span id="_CPPv321lv_color_filter_dsc_t"></span><span id="_CPPv221lv_color_filter_dsc_t"></span><span id="lv_color_filter_dsc_t"></span><span class="target" id="lv__color_8h_1ada4c995e27d92e07b48d406a4510d2cb"></span><span class="k"><span class="pre">typedef</span></span><span class="w"> </span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv422_lv_color_filter_dsc_t" title="_lv_color_filter_dsc_t"><span class="n"><span class="pre">_lv_color_filter_dsc_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_filter_dsc_t</span></span></span><a class="headerlink" href="#_CPPv421lv_color_filter_dsc_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-enums">Enums</p>
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv4Ut2_42">
+<span id="_CPPv3Ut2_42"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5f"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">[anonymous]</span></span></span><a class="headerlink" href="#_CPPv4Ut2_42" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Opacity percentages. </p>
+<p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_4213LV_OPA_TRANSPE">
+<span id="_CPPv3NUt2_4213LV_OPA_TRANSPE"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fac5670b24820d02ac0fe11ff8a1ad00c0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_TRANSP</span></span></span><a class="headerlink" href="#_CPPv4NUt2_4213LV_OPA_TRANSPE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_428LV_OPA_0E">
+<span id="_CPPv3NUt2_428LV_OPA_0E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa022929d228c6de59a3bcb10e9d6373a8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_0</span></span></span><a class="headerlink" href="#_CPPv4NUt2_428LV_OPA_0E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_10E">
+<span id="_CPPv3NUt2_429LV_OPA_10E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fadbd27adbfd0347f6af5030c7f533e47d"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_10</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_10E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_20E">
+<span id="_CPPv3NUt2_429LV_OPA_20E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5facdffbc269048ad2b6e689e311aaefea6"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_20</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_20E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_30E">
+<span id="_CPPv3NUt2_429LV_OPA_30E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa2eca983ed75d41926f0e7c9608aa2aa0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_30</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_30E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_40E">
+<span id="_CPPv3NUt2_429LV_OPA_40E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa3dde339d67efb75f90331f51df49d74f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_40</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_40E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_50E">
+<span id="_CPPv3NUt2_429LV_OPA_50E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa2b0db3f7dd5170beb8cdaa5e26c35200"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_50</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_50E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_60E">
+<span id="_CPPv3NUt2_429LV_OPA_60E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fae506ddb8751efd6258111395b45c2cd8"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_60</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_60E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_70E">
+<span id="_CPPv3NUt2_429LV_OPA_70E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa519758c4538a66db53b951157a879532"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_70</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_70E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_80E">
+<span id="_CPPv3NUt2_429LV_OPA_80E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5facc4a6a3a3a6c866d17da2283723bb94f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_80</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_80E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_429LV_OPA_90E">
+<span id="_CPPv3NUt2_429LV_OPA_90E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fab49a9bc0c62645a617ac7d76a3be4546"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_90</span></span></span><a class="headerlink" href="#_CPPv4NUt2_429LV_OPA_90E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_4210LV_OPA_100E">
+<span id="_CPPv3NUt2_4210LV_OPA_100E"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa465addffd4457a5aab153657aeb9eb12"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_100</span></span></span><a class="headerlink" href="#_CPPv4NUt2_4210LV_OPA_100E" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4NUt2_4212LV_OPA_COVERE">
+<span id="_CPPv3NUt2_4212LV_OPA_COVERE"></span><span class="target" id="lv__color_8h_1a394b3903fbf00ba2b6243f60689a5a5fa13cdfbbe767edf76dc4f53389dfeca4a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_OPA_COVER</span></span></span><a class="headerlink" href="#_CPPv4NUt2_4212LV_OPA_COVERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="cpp enum">
+<dt class="sig sig-object cpp" id="_CPPv412lv_palette_t">
+<span id="_CPPv312lv_palette_t"></span><span id="_CPPv212lv_palette_t"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9c"></span><span class="k"><span class="pre">enum</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_palette_t</span></span></span><a class="headerlink" href="#_CPPv412lv_palette_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p><em>Values:</em></p>
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t14LV_PALETTE_REDE">
+<span id="_CPPv3N12lv_palette_t14LV_PALETTE_REDE"></span><span id="_CPPv2N12lv_palette_t14LV_PALETTE_REDE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca8999c470e63be2ac021fde7d612ef9b5"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_RED</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t14LV_PALETTE_REDE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_PINKE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_PINKE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_PINKE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca41b1bded24d267261e59e0d2b4b1d873"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_PINK</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_PINKE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t17LV_PALETTE_PURPLEE">
+<span id="_CPPv3N12lv_palette_t17LV_PALETTE_PURPLEE"></span><span id="_CPPv2N12lv_palette_t17LV_PALETTE_PURPLEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca11dfd17b2dfbd1f68b2a75925d9cf93e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_PURPLE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t17LV_PALETTE_PURPLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t22LV_PALETTE_DEEP_PURPLEE">
+<span id="_CPPv3N12lv_palette_t22LV_PALETTE_DEEP_PURPLEE"></span><span id="_CPPv2N12lv_palette_t22LV_PALETTE_DEEP_PURPLEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca184d2f79486ea1fcad2205e413f09aef"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_DEEP_PURPLE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t22LV_PALETTE_DEEP_PURPLEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t17LV_PALETTE_INDIGOE">
+<span id="_CPPv3N12lv_palette_t17LV_PALETTE_INDIGOE"></span><span id="_CPPv2N12lv_palette_t17LV_PALETTE_INDIGOE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca841d02d7e8842c7d7cf0a6452c895e95"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_INDIGO</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t17LV_PALETTE_INDIGOE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_BLUEE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_BLUEE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_BLUEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca601ab72e0f389201d8a7f0a50dc0bbc2"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_BLUE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_BLUEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t21LV_PALETTE_LIGHT_BLUEE">
+<span id="_CPPv3N12lv_palette_t21LV_PALETTE_LIGHT_BLUEE"></span><span id="_CPPv2N12lv_palette_t21LV_PALETTE_LIGHT_BLUEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca73aa5c1a6d58e789bb82ebb77317fafb"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_LIGHT_BLUE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t21LV_PALETTE_LIGHT_BLUEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_CYANE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_CYANE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_CYANE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9cab67b36f1f5efba59254119c6801afb6b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_CYAN</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_CYANE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_TEALE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_TEALE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_TEALE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca9ed0677c8db81cd113dca283e09d1954"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_TEAL</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_TEALE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t16LV_PALETTE_GREENE">
+<span id="_CPPv3N12lv_palette_t16LV_PALETTE_GREENE"></span><span id="_CPPv2N12lv_palette_t16LV_PALETTE_GREENE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca799cf9fdb9eacdbeb56b0562ace15d3b"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_GREEN</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t16LV_PALETTE_GREENE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t22LV_PALETTE_LIGHT_GREENE">
+<span id="_CPPv3N12lv_palette_t22LV_PALETTE_LIGHT_GREENE"></span><span id="_CPPv2N12lv_palette_t22LV_PALETTE_LIGHT_GREENE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9cacf2ad3cd0d38578ef05e0677f0507ce0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_LIGHT_GREEN</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t22LV_PALETTE_LIGHT_GREENE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_LIMEE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_LIMEE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_LIMEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9cabccea0f2d8de8cdb60cb5783af80808a"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_LIME</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_LIMEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t17LV_PALETTE_YELLOWE">
+<span id="_CPPv3N12lv_palette_t17LV_PALETTE_YELLOWE"></span><span id="_CPPv2N12lv_palette_t17LV_PALETTE_YELLOWE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9cab0781e5dcc61d9eaf3cd023d3a01d90f"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_YELLOW</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t17LV_PALETTE_YELLOWE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t16LV_PALETTE_AMBERE">
+<span id="_CPPv3N12lv_palette_t16LV_PALETTE_AMBERE"></span><span id="_CPPv2N12lv_palette_t16LV_PALETTE_AMBERE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9caabf5c0fe046db263d80f524705a0ae61"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_AMBER</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t16LV_PALETTE_AMBERE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t17LV_PALETTE_ORANGEE">
+<span id="_CPPv3N12lv_palette_t17LV_PALETTE_ORANGEE"></span><span id="_CPPv2N12lv_palette_t17LV_PALETTE_ORANGEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca2ba28e943633efd7f9fabf279e189732"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_ORANGE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t17LV_PALETTE_ORANGEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t22LV_PALETTE_DEEP_ORANGEE">
+<span id="_CPPv3N12lv_palette_t22LV_PALETTE_DEEP_ORANGEE"></span><span id="_CPPv2N12lv_palette_t22LV_PALETTE_DEEP_ORANGEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9caa5698a59b593e97cf74c836f4b6413d0"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_DEEP_ORANGE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t22LV_PALETTE_DEEP_ORANGEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t16LV_PALETTE_BROWNE">
+<span id="_CPPv3N12lv_palette_t16LV_PALETTE_BROWNE"></span><span id="_CPPv2N12lv_palette_t16LV_PALETTE_BROWNE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca7530b489d7870e4597b09d9c07d628b4"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_BROWN</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t16LV_PALETTE_BROWNE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t20LV_PALETTE_BLUE_GREYE">
+<span id="_CPPv3N12lv_palette_t20LV_PALETTE_BLUE_GREYE"></span><span id="_CPPv2N12lv_palette_t20LV_PALETTE_BLUE_GREYE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9cafe7b69bbede212bc4a0adab3def5e0a9"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_BLUE_GREY</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t20LV_PALETTE_BLUE_GREYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_GREYE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_GREYE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_GREYE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9caffdd132d4990d4a81fd60ead14b5600e"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_GREY</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_GREYE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t16_LV_PALETTE_LASTE">
+<span id="_CPPv3N12lv_palette_t16_LV_PALETTE_LASTE"></span><span id="_CPPv2N12lv_palette_t16_LV_PALETTE_LASTE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca26d732f1007914518d1f3549d9a7bbda"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_LV_PALETTE_LAST</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t16_LV_PALETTE_LASTE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp enumerator">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_palette_t15LV_PALETTE_NONEE">
+<span id="_CPPv3N12lv_palette_t15LV_PALETTE_NONEE"></span><span id="_CPPv2N12lv_palette_t15LV_PALETTE_NONEE"></span><span class="target" id="lv__color_8h_1ab9eb65d3f0938343eac9418471bd0d9ca353bb30abd2f75566edcee19d76e7146"></span><span class="k"><span class="pre">enumerator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">LV_PALETTE_NONE</span></span></span><a class="headerlink" href="#_CPPv4N12lv_palette_t15LV_PALETTE_NONEE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-functions">Functions</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="lv__color_8h_1abe4457aa99ff3ce18f3bc1d3909b321a"></span><span class="sig-name descname"><span class="pre">typedef</span> <span class="pre">LV_CONCAT3</span> <span class="pre">(uint,</span> <span class="pre">LV_COLOR_SIZE,</span> <span class="pre">_t)</span> <span class="pre">lv_color_int_t</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp">
+<span class="target" id="lv__color_8h_1a08f61c8ce07684eb068dccbca172463d"></span><span class="sig-name descname"><span class="pre">typedef</span> <span class="pre">LV_CONCAT3</span> <span class="pre">(lv_color,</span> <span class="pre">LV_COLOR_DEPTH,</span> <span class="pre">_t)</span> <span class="pre">lv_color_t</span></span></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412lv_color_to110lv_color_t">
+<span id="_CPPv312lv_color_to110lv_color_t"></span><span id="_CPPv212lv_color_to110lv_color_t"></span><span id="lv_color_to1__lv_color_t"></span><span class="target" id="lv__color_8h_1a3dc371907bc679c4bce07a44d87c761f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_to1</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412lv_color_to110lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412lv_color_to810lv_color_t">
+<span id="_CPPv312lv_color_to810lv_color_t"></span><span id="_CPPv212lv_color_to810lv_color_t"></span><span id="lv_color_to8__lv_color_t"></span><span class="target" id="lv__color_8h_1a0e7df29d07614b7305a6018132ef5851"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_to8</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412lv_color_to810lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413lv_color_to1610lv_color_t">
+<span id="_CPPv313lv_color_to1610lv_color_t"></span><span id="_CPPv213lv_color_to1610lv_color_t"></span><span id="lv_color_to16__lv_color_t"></span><span class="target" id="lv__color_8h_1a619d57100421e08ed853e87182c74d82"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_to16</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413lv_color_to1610lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413lv_color_to3210lv_color_t">
+<span id="_CPPv313lv_color_to3210lv_color_t"></span><span id="_CPPv213lv_color_to3210lv_color_t"></span><span id="lv_color_to32__lv_color_t"></span><span class="target" id="lv__color_8h_1a79bbd79f0e137b14dadcdcfe3ce8e85f"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_to32</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413lv_color_to3210lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419lv_color_brightness10lv_color_t">
+<span id="_CPPv319lv_color_brightness10lv_color_t"></span><span id="_CPPv219lv_color_brightness10lv_color_t"></span><span id="lv_color_brightness__lv_color_t"></span><span class="target" id="lv__color_8h_1ac8f5127fc2dda77756f091048e8798fa"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_brightness</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419lv_color_brightness10lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the brightness of a color </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> -- a color </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the brightness [0..255] </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413lv_color_make7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv313lv_color_make7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv213lv_color_make7uint8_t7uint8_t7uint8_t"></span><span id="lv_color_make__uint8_t.uint8_t.uint8_t"></span><span class="target" id="lv__color_8h_1ad3654d38dfa4ef3b04c9312f582815e9"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_make</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">r</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413lv_color_make7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv412lv_color_hex8uint32_t">
+<span id="_CPPv312lv_color_hex8uint32_t"></span><span id="_CPPv212lv_color_hex8uint32_t"></span><span id="lv_color_hex__uint32_t"></span><span class="target" id="lv__color_8h_1a5d7966d9dc2b0e344d986717f70c7585"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_hex</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv412lv_color_hex8uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv413lv_color_hex38uint32_t">
+<span id="_CPPv313lv_color_hex38uint32_t"></span><span id="_CPPv213lv_color_hex38uint32_t"></span><span id="lv_color_hex3__uint32_t"></span><span class="target" id="lv__color_8h_1a1bcd1d2a59a6e2d651eeb32391639e6e"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_hex3</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv413lv_color_hex38uint32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv424lv_color_filter_dsc_initP21lv_color_filter_dsc_t20lv_color_filter_cb_t">
+<span id="_CPPv324lv_color_filter_dsc_initP21lv_color_filter_dsc_t20lv_color_filter_cb_t"></span><span id="_CPPv224lv_color_filter_dsc_initP21lv_color_filter_dsc_t20lv_color_filter_cb_t"></span><span id="lv_color_filter_dsc_init__lv_color_filter_dsc_tP.lv_color_filter_cb_t"></span><span class="target" id="lv__color_8h_1a5684c0ececa8df649be47c3497b4cac6"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_filter_dsc_init</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv421lv_color_filter_dsc_t" title="lv_color_filter_dsc_t"><span class="n"><span class="pre">lv_color_filter_dsc_t</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n sig-param"><span class="pre">dsc</span></span>, <a class="reference internal" href="#_CPPv420lv_color_filter_cb_t" title="lv_color_filter_cb_t"><span class="n"><span class="pre">lv_color_filter_cb_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">cb</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv424lv_color_filter_dsc_initP21lv_color_filter_dsc_t20lv_color_filter_cb_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv416lv_color_lighten10lv_color_t8lv_opa_t">
+<span id="_CPPv316lv_color_lighten10lv_color_t8lv_opa_t"></span><span id="_CPPv216lv_color_lighten10lv_color_t8lv_opa_t"></span><span id="lv_color_lighten__lv_color_t.lv_opa_t"></span><span class="target" id="lv__color_8h_1abb69f9753b72145e5c6334b418ee61f6"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_lighten</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span>, <span class="n"><span class="pre">lv_opa_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lvl</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416lv_color_lighten10lv_color_t8lv_opa_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415lv_color_darken10lv_color_t8lv_opa_t">
+<span id="_CPPv315lv_color_darken10lv_color_t8lv_opa_t"></span><span id="_CPPv215lv_color_darken10lv_color_t8lv_opa_t"></span><span id="lv_color_darken__lv_color_t.lv_opa_t"></span><span class="target" id="lv__color_8h_1a210eb413016d55506d3a74d0e562cd18"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_darken</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span>, <span class="n"><span class="pre">lv_opa_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lvl</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415lv_color_darken10lv_color_t8lv_opa_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv425lv_color_change_lightness10lv_color_t8lv_opa_t">
+<span id="_CPPv325lv_color_change_lightness10lv_color_t8lv_opa_t"></span><span id="_CPPv225lv_color_change_lightness10lv_color_t8lv_opa_t"></span><span id="lv_color_change_lightness__lv_color_t.lv_opa_t"></span><span class="target" id="lv__color_8h_1a1172ce6482486321aa2412584f8a4cb1"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_change_lightness</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">c</span></span>, <span class="n"><span class="pre">lv_opa_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lvl</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425lv_color_change_lightness10lv_color_t8lv_opa_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419lv_color_hsv_to_rgb8uint16_t7uint8_t7uint8_t">
+<span id="_CPPv319lv_color_hsv_to_rgb8uint16_t7uint8_t7uint8_t"></span><span id="_CPPv219lv_color_hsv_to_rgb8uint16_t7uint8_t7uint8_t"></span><span id="lv_color_hsv_to_rgb__uint16_t.uint8_t.uint8_t"></span><span class="target" id="lv__color_8h_1a09816229b98000ba2fc7098696c2b740"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_hsv_to_rgb</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">h</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">s</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">v</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419lv_color_hsv_to_rgb8uint16_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a HSV color to RGB </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>h</strong> -- hue [0..359] </p></li>
+<li><p><strong>s</strong> -- saturation [0..100] </p></li>
+<li><p><strong>v</strong> -- value [0..100] </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the given RGB color in RGB (with LV_COLOR_DEPTH depth) </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419lv_color_rgb_to_hsv7uint8_t7uint8_t7uint8_t">
+<span id="_CPPv319lv_color_rgb_to_hsv7uint8_t7uint8_t7uint8_t"></span><span id="_CPPv219lv_color_rgb_to_hsv7uint8_t7uint8_t7uint8_t"></span><span id="lv_color_rgb_to_hsv__uint8_t.uint8_t.uint8_t"></span><span class="target" id="lv__color_8h_1a4d455fed0393e8a3fee3d8d5d3ea5900"></span><a class="reference internal" href="#_CPPv414lv_color_hsv_t" title="lv_color_hsv_t"><span class="n"><span class="pre">lv_color_hsv_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_rgb_to_hsv</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">r8</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">g8</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">b8</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419lv_color_rgb_to_hsv7uint8_t7uint8_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a 32-bit RGB color to HSV </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>r8</strong> -- 8-bit red </p></li>
+<li><p><strong>g8</strong> -- 8-bit green </p></li>
+<li><p><strong>b8</strong> -- 8-bit blue </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the given RGB color in HSV </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415lv_color_to_hsv10lv_color_t">
+<span id="_CPPv315lv_color_to_hsv10lv_color_t"></span><span id="_CPPv215lv_color_to_hsv10lv_color_t"></span><span id="lv_color_to_hsv__lv_color_t"></span><span class="target" id="lv__color_8h_1a2afdf6490e5979aa453398c03773bf2d"></span><a class="reference internal" href="#_CPPv414lv_color_hsv_t" title="lv_color_hsv_t"><span class="n"><span class="pre">lv_color_hsv_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_to_hsv</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">color</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415lv_color_to_hsv10lv_color_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Convert a color to HSV </p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>color</strong> -- color </p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the given color in HSV </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv419lv_color_chroma_keyv">
+<span id="_CPPv319lv_color_chroma_keyv"></span><span id="_CPPv219lv_color_chroma_keyv"></span><span id="lv_color_chroma_key__void"></span><span class="target" id="lv__color_8h_1adcd4f2c83e54be3da10d3eac583ff29c"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_chroma_key</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419lv_color_chroma_keyv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Just a wrapper around LV_COLOR_CHROMA_KEY because it might be more convenient to use a function is some cases </p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>LV_COLOR_CHROMA_KEY </p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv415lv_palette_main12lv_palette_t">
+<span id="_CPPv315lv_palette_main12lv_palette_t"></span><span id="_CPPv215lv_palette_main12lv_palette_t"></span><span id="lv_palette_main__lv_palette_t"></span><span class="target" id="lv__color_8h_1a02d11c7e2f70e8b777901d9e403c6b34"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_palette_main</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412lv_palette_t" title="lv_palette_t"><span class="n"><span class="pre">lv_palette_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv415lv_palette_main12lv_palette_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414lv_color_whitev">
+<span id="_CPPv314lv_color_whitev"></span><span id="_CPPv214lv_color_whitev"></span><span id="lv_color_white__void"></span><span class="target" id="lv__color_8h_1a3e6a35895bfa2267f2cb79cc6c0a5f85"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_white</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414lv_color_whitev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv414lv_color_blackv">
+<span id="_CPPv314lv_color_blackv"></span><span id="_CPPv214lv_color_blackv"></span><span id="lv_color_black__void"></span><span class="target" id="lv__color_8h_1aa14fa5ebf9a00e725aed5e488f505f82"></span><span class="k"><span class="pre">static</span></span><span class="w"> </span><span class="k"><span class="pre">inline</span></span><span class="w"> </span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_black</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv414lv_color_blackv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv418lv_palette_lighten12lv_palette_t7uint8_t">
+<span id="_CPPv318lv_palette_lighten12lv_palette_t7uint8_t"></span><span id="_CPPv218lv_palette_lighten12lv_palette_t7uint8_t"></span><span id="lv_palette_lighten__lv_palette_t.uint8_t"></span><span class="target" id="lv__color_8h_1acf087458512c83eba0b5feacc3e26396"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_palette_lighten</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412lv_palette_t" title="lv_palette_t"><span class="n"><span class="pre">lv_palette_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lvl</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418lv_palette_lighten12lv_palette_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv417lv_palette_darken12lv_palette_t7uint8_t">
+<span id="_CPPv317lv_palette_darken12lv_palette_t7uint8_t"></span><span id="_CPPv217lv_palette_darken12lv_palette_t7uint8_t"></span><span id="lv_palette_darken__lv_palette_t.uint8_t"></span><span class="target" id="lv__color_8h_1a024d5d5539910f590b43b23f5908c695"></span><span class="n"><span class="pre">lv_color_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_palette_darken</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv412lv_palette_t" title="lv_palette_t"><span class="n"><span class="pre">lv_palette_t</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">p</span></span>, <span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">lvl</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv417lv_palette_darken12lv_palette_t7uint8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<dl class="cpp union">
+<dt class="sig sig-object cpp" id="_CPPv411lv_color1_t">
+<span id="_CPPv311lv_color1_t"></span><span id="_CPPv211lv_color1_t"></span><span class="target" id="unionlv__color1__t"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color1_t</span></span></span><a class="headerlink" href="#_CPPv411lv_color1_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color1_t4fullE">
+<span id="_CPPv3N11lv_color1_t4fullE"></span><span id="_CPPv2N11lv_color1_t4fullE"></span><span id="lv_color1_t::full__uint8_t"></span><span class="target" id="unionlv__color1__t_1ab0765bc623f863cc7d1cb39381fc3509"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">full</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color1_t4fullE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color1_t4blueE">
+<span id="_CPPv3N11lv_color1_t4blueE"></span><span id="_CPPv2N11lv_color1_t4blueE"></span><span id="lv_color1_t::blue__uint8_t"></span><span class="target" id="unionlv__color1__t_1aab1e82f0cd269b6831d6245aad779664"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color1_t4blueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color1_t5greenE">
+<span id="_CPPv3N11lv_color1_t5greenE"></span><span id="_CPPv2N11lv_color1_t5greenE"></span><span id="lv_color1_t::green__uint8_t"></span><span class="target" id="unionlv__color1__t_1a842588a68947b7c67e7e568740982c36"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color1_t5greenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color1_t3redE">
+<span id="_CPPv3N11lv_color1_t3redE"></span><span id="_CPPv2N11lv_color1_t3redE"></span><span id="lv_color1_t::red__uint8_t"></span><span class="target" id="unionlv__color1__t_1a43b5e095f8632b825693462b85b22132"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color1_t3redE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color1_t2chE">
+<span id="_CPPv3N11lv_color1_t2chE"></span><span id="_CPPv2N11lv_color1_t2chE"></span><span class="target" id="unionlv__color1__t_1ada5fc82bd561abe5c87ca3ada6b154b3"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411lv_color1_t" title="lv_color1_t"><span class="n"><span class="pre">lv_color1_t</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">[anonymous]</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ch</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color1_t2chE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp union">
+<dt class="sig sig-object cpp" id="_CPPv411lv_color8_t">
+<span id="_CPPv311lv_color8_t"></span><span id="_CPPv211lv_color8_t"></span><span class="target" id="unionlv__color8__t"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color8_t</span></span></span><a class="headerlink" href="#_CPPv411lv_color8_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color8_t4blueE">
+<span id="_CPPv3N11lv_color8_t4blueE"></span><span id="_CPPv2N11lv_color8_t4blueE"></span><span id="lv_color8_t::blue__uint8_t"></span><span class="target" id="unionlv__color8__t_1a13f6fe7fdd8d49b75e06a022146464e3"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color8_t4blueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color8_t5greenE">
+<span id="_CPPv3N11lv_color8_t5greenE"></span><span id="_CPPv2N11lv_color8_t5greenE"></span><span id="lv_color8_t::green__uint8_t"></span><span class="target" id="unionlv__color8__t_1a77f8631c3f09bbf7f6d96c8415085517"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color8_t5greenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color8_t3redE">
+<span id="_CPPv3N11lv_color8_t3redE"></span><span id="_CPPv2N11lv_color8_t3redE"></span><span id="lv_color8_t::red__uint8_t"></span><span class="target" id="unionlv__color8__t_1abed658f0eaf8cee7278869ad88246d68"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color8_t3redE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color8_t2chE">
+<span id="_CPPv3N11lv_color8_t2chE"></span><span id="_CPPv2N11lv_color8_t2chE"></span><span class="target" id="unionlv__color8__t_1a7d1ac51b167230317c20b04f18fceb19"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv411lv_color8_t" title="lv_color8_t"><span class="n"><span class="pre">lv_color8_t</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">[anonymous]</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ch</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color8_t2chE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N11lv_color8_t4fullE">
+<span id="_CPPv3N11lv_color8_t4fullE"></span><span id="_CPPv2N11lv_color8_t4fullE"></span><span id="lv_color8_t::full__uint8_t"></span><span class="target" id="unionlv__color8__t_1a6f95b496bba6bb7b79d7322551219ba7"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">full</span></span></span><a class="headerlink" href="#_CPPv4N11lv_color8_t4fullE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp union">
+<dt class="sig sig-object cpp" id="_CPPv412lv_color16_t">
+<span id="_CPPv312lv_color16_t"></span><span id="_CPPv212lv_color16_t"></span><span class="target" id="unionlv__color16__t"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color16_t</span></span></span><a class="headerlink" href="#_CPPv412lv_color16_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t4blueE">
+<span id="_CPPv3N12lv_color16_t4blueE"></span><span id="_CPPv2N12lv_color16_t4blueE"></span><span id="lv_color16_t::blue__uint16_t"></span><span class="target" id="unionlv__color16__t_1a0c3cfa9a2070029d502140f5e23b8a46"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t4blueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t5greenE">
+<span id="_CPPv3N12lv_color16_t5greenE"></span><span id="_CPPv2N12lv_color16_t5greenE"></span><span id="lv_color16_t::green__uint16_t"></span><span class="target" id="unionlv__color16__t_1a229d888dcd846712eb78010a4938d39d"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t5greenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t3redE">
+<span id="_CPPv3N12lv_color16_t3redE"></span><span id="_CPPv2N12lv_color16_t3redE"></span><span id="lv_color16_t::red__uint16_t"></span><span class="target" id="unionlv__color16__t_1a0040e16563df0dd2d1f052e8cac9a980"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t3redE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t7green_hE">
+<span id="_CPPv3N12lv_color16_t7green_hE"></span><span id="_CPPv2N12lv_color16_t7green_hE"></span><span id="lv_color16_t::green_h__uint16_t"></span><span class="target" id="unionlv__color16__t_1a869a74b50566731059ff66cdc1146f0a"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green_h</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t7green_hE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t7green_lE">
+<span id="_CPPv3N12lv_color16_t7green_lE"></span><span id="_CPPv2N12lv_color16_t7green_lE"></span><span id="lv_color16_t::green_l__uint16_t"></span><span class="target" id="unionlv__color16__t_1a645d0eca6b6ccf03e8841850df45dd1b"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green_l</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t7green_lE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t2chE">
+<span id="_CPPv3N12lv_color16_t2chE"></span><span id="_CPPv2N12lv_color16_t2chE"></span><span class="target" id="unionlv__color16__t_1ac3537d48482406fb20271e061c4556e1"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv412lv_color16_t" title="lv_color16_t"><span class="n"><span class="pre">lv_color16_t</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">[anonymous]</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ch</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t2chE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color16_t4fullE">
+<span id="_CPPv3N12lv_color16_t4fullE"></span><span id="_CPPv2N12lv_color16_t4fullE"></span><span id="lv_color16_t::full__uint16_t"></span><span class="target" id="unionlv__color16__t_1a1ca6c661db8e7551e95792af824f6403"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">full</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color16_t4fullE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp union">
+<dt class="sig sig-object cpp" id="_CPPv412lv_color32_t">
+<span id="_CPPv312lv_color32_t"></span><span id="_CPPv212lv_color32_t"></span><span class="target" id="unionlv__color32__t"></span><span class="k"><span class="pre">union</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color32_t</span></span></span><a class="headerlink" href="#_CPPv412lv_color32_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t4blueE">
+<span id="_CPPv3N12lv_color32_t4blueE"></span><span id="_CPPv2N12lv_color32_t4blueE"></span><span id="lv_color32_t::blue__uint8_t"></span><span class="target" id="unionlv__color32__t_1a3dfb38a077f62e782d1c63350584f6bb"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">blue</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t4blueE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t5greenE">
+<span id="_CPPv3N12lv_color32_t5greenE"></span><span id="_CPPv2N12lv_color32_t5greenE"></span><span id="lv_color32_t::green__uint8_t"></span><span class="target" id="unionlv__color32__t_1a7951b7863d314fab2ddf29df169bd483"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">green</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t5greenE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t3redE">
+<span id="_CPPv3N12lv_color32_t3redE"></span><span id="_CPPv2N12lv_color32_t3redE"></span><span id="lv_color32_t::red__uint8_t"></span><span class="target" id="unionlv__color32__t_1a7e62d507ce57ce35236017591fab3224"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">red</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t3redE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t5alphaE">
+<span id="_CPPv3N12lv_color32_t5alphaE"></span><span id="_CPPv2N12lv_color32_t5alphaE"></span><span id="lv_color32_t::alpha__uint8_t"></span><span class="target" id="unionlv__color32__t_1a5519a07b8b8d309f06683f2110d0c8e0"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">alpha</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t5alphaE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t2chE">
+<span id="_CPPv3N12lv_color32_t2chE"></span><span id="_CPPv2N12lv_color32_t2chE"></span><span class="target" id="unionlv__color32__t_1a36f5b4d396065f2ecc5f157b3f79b0e4"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv412lv_color32_t" title="lv_color32_t"><span class="n"><span class="pre">lv_color32_t</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">[anonymous]</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">ch</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t2chE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N12lv_color32_t4fullE">
+<span id="_CPPv3N12lv_color32_t4fullE"></span><span id="_CPPv2N12lv_color32_t4fullE"></span><span id="lv_color32_t::full__uint32_t"></span><span class="target" id="unionlv__color32__t_1a724212bffcd824d555e7842b4d3a88c6"></span><span class="n"><span class="pre">uint32_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">full</span></span></span><a class="headerlink" href="#_CPPv4N12lv_color32_t4fullE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv414lv_color_hsv_t">
+<span id="_CPPv314lv_color_hsv_t"></span><span id="_CPPv214lv_color_hsv_t"></span><span id="lv_color_hsv_t"></span><span class="target" id="structlv__color__hsv__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">lv_color_hsv_t</span></span></span><a class="headerlink" href="#_CPPv414lv_color_hsv_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14lv_color_hsv_t1hE">
+<span id="_CPPv3N14lv_color_hsv_t1hE"></span><span id="_CPPv2N14lv_color_hsv_t1hE"></span><span id="lv_color_hsv_t::h__uint16_t"></span><span class="target" id="structlv__color__hsv__t_1a953cf0eb0bd57da53b496b846b659a10"></span><span class="n"><span class="pre">uint16_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">h</span></span></span><a class="headerlink" href="#_CPPv4N14lv_color_hsv_t1hE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14lv_color_hsv_t1sE">
+<span id="_CPPv3N14lv_color_hsv_t1sE"></span><span id="_CPPv2N14lv_color_hsv_t1sE"></span><span id="lv_color_hsv_t::s__uint8_t"></span><span class="target" id="structlv__color__hsv__t_1ad95e4cc269ea11bf20f2e56e8dd92037"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">s</span></span></span><a class="headerlink" href="#_CPPv4N14lv_color_hsv_t1sE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N14lv_color_hsv_t1vE">
+<span id="_CPPv3N14lv_color_hsv_t1vE"></span><span id="_CPPv2N14lv_color_hsv_t1vE"></span><span id="lv_color_hsv_t::v__uint8_t"></span><span class="target" id="structlv__color__hsv__t_1aee68a0e7d6e57be412bc49a241cf02bf"></span><span class="n"><span class="pre">uint8_t</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">v</span></span></span><a class="headerlink" href="#_CPPv4N14lv_color_hsv_t1vE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt class="sig sig-object cpp" id="_CPPv422_lv_color_filter_dsc_t">
+<span id="_CPPv322_lv_color_filter_dsc_t"></span><span id="_CPPv222_lv_color_filter_dsc_t"></span><span id="_lv_color_filter_dsc_t"></span><span class="target" id="struct__lv__color__filter__dsc__t"></span><span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">_lv_color_filter_dsc_t</span></span></span><a class="headerlink" href="#_CPPv422_lv_color_filter_dsc_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric" id="breathe-section-title-public-members">Public Members</p>
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22_lv_color_filter_dsc_t9filter_cbE">
+<span id="_CPPv3N22_lv_color_filter_dsc_t9filter_cbE"></span><span id="_CPPv2N22_lv_color_filter_dsc_t9filter_cbE"></span><span id="_lv_color_filter_dsc_t::filter_cb__lv_color_filter_cb_t"></span><span class="target" id="struct__lv__color__filter__dsc__t_1acad72beef9d5a5863ab067d62481b6ee"></span><a class="reference internal" href="#_CPPv420lv_color_filter_cb_t" title="lv_color_filter_cb_t"><span class="n"><span class="pre">lv_color_filter_cb_t</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">filter_cb</span></span></span><a class="headerlink" href="#_CPPv4N22_lv_color_filter_dsc_t9filter_cbE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp var">
+<dt class="sig sig-object cpp" id="_CPPv4N22_lv_color_filter_dsc_t9user_dataE">
+<span id="_CPPv3N22_lv_color_filter_dsc_t9user_dataE"></span><span id="_CPPv2N22_lv_color_filter_dsc_t9user_dataE"></span><span id="_lv_color_filter_dsc_t::user_data__voidP"></span><span class="target" id="struct__lv__color__filter__dsc__t_1a030ca869c7f4ac5b829bb6527a424faa"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">user_data</span></span></span><a class="headerlink" href="#_CPPv4N22_lv_color_filter_dsc_t9user_dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="font.html" class="btn btn-neutral float-right" title="Fonts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="display.html" class="btn btn-neutral float-left" title="Displays" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, LVGL LLC.
+      <span class="lastupdated">
+        Last updated on Jan 10, 2022.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+  
+
+<style>
+  .wy-side-nav-search > div[role="search"] {
+    color: black;
+  }
+</style>
+ <script type="text/javascript">
+    $(document).ready(function() {
+        $(".toggle > *").hide();
+        $(".toggle .header").show();
+        $(".toggle .header").click(function() {
+            $(this).parent().children().not(".header").toggle(400);
+            $(this).parent().children(".header").toggleClass("open");
+        })
+    });
+</script>
+
+<script type="text/javascript">
+function add_version_selector()
+{
+    return fetch("https://raw.githubusercontent.com/lvgl/docs_compiled/gh-pages/versionlist.txt")
+        .then(res => res.text())
+        .then(text => {
+            const versions = text.split("\n").filter(version => version.trim().length > 0);
+            let p = document.getElementById("rtd-search-form").parentElement;
+            p.innerHTML = `
+            <select name="versions" id="versions" onchange="ver_sel()" style="border-radius:5px; margin-bottom:15px">
+            ${versions.map(version => {
+                const versionName = "v" + ((version.indexOf(".") != -1) ? version : (version + " (latest minor)"));
+                return `<option value="${version}">${versionName}</option>`;
+            })}
+            </select>` + p.innerHTML;
+        });
+}
+
+function ver_sel()
+{
+  var x = document.getElementById("versions").value;
+  window.location.href = window.location.protocol + "//" + window.location.host + "/" + x + "/";
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    add_version_selector().then(() => {
+        var value = window.location.pathname.split('/')[1];
+        document.getElementById("versions").value = value;
+    });
+    
+})
+</script>
+
+
+</body>
+</html>

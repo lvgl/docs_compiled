@@ -1,0 +1,37 @@
+lvgl/CMakeFiles/lvgl.dir/src/misc/cache/_lv_cache_lru_rb.c.o: \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/_lv_cache_lru_rb.c \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/_lv_cache_lru_rb.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/lv_cache_entry.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/lv_os.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../lv_conf_kconfig.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lv_conf.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../misc/lv_types.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../misc/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdint.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/stdint.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stddef.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/lv_os_none.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../lv_types.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/lv_cache_private.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdbool.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/features.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/alloca.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../stdlib/lv_sprintf.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/inttypes.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/stdarg.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdarg.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../stdlib/lv_string.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../stdlib/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../lv_ll.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../lv_rb.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../misc/lv_assert.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../misc/lv_log.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../osal/../misc/../stdlib/lv_mem.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/string.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/string.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/strings.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/misc/cache/../../stdlib/../misc/lv_types.h

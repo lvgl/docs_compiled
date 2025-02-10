@@ -1,0 +1,10 @@
+.. _lv_vg_lite_pending:
+
+====================
+lv_vg_lite_pending.h
+====================
+
+
+.. doxygenfile:: lv_vg_lite_pending.h
+    :project: lvgl
+

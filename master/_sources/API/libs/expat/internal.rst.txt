@@ -1,0 +1,10 @@
+.. _internal_h:
+
+==========
+internal.h
+==========
+
+
+.. doxygenfile:: internal.h
+    :project: lvgl
+

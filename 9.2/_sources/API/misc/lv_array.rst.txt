@@ -1,0 +1,10 @@
+.. _lv_array:
+
+==========
+lv_array.h
+==========
+
+
+.. doxygenfile:: lv_array.h
+    :project: lvgl
+

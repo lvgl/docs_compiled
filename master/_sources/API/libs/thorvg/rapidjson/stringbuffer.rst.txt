@@ -1,0 +1,10 @@
+.. _stringbuffer_h:
+
+==============
+stringbuffer.h
+==============
+
+
+.. doxygenfile:: stringbuffer.h
+    :project: lvgl
+

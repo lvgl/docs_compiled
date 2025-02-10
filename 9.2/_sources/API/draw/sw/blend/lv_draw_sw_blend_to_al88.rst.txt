@@ -1,0 +1,10 @@
+.. _lv_draw_sw_blend_to_al88:
+
+==========================
+lv_draw_sw_blend_to_al88.h
+==========================
+
+
+.. doxygenfile:: lv_draw_sw_blend_to_al88.h
+    :project: lvgl
+

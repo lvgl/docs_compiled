@@ -1,0 +1,10 @@
+.. _tvgLottieProperty_h:
+
+===================
+tvgLottieProperty.h
+===================
+
+
+.. doxygenfile:: tvgLottieProperty.h
+    :project: lvgl
+

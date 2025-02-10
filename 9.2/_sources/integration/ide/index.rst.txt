@@ -1,0 +1,11 @@
+:link_to_translation:`zh_CN:[中文]`	
+
+====
+IDEs
+====
+
+.. toctree::
+    :maxdepth: 2
+
+    pc-simulator
+    mdk

@@ -1,0 +1,10 @@
+.. _lv_xml_button_parser_h:
+
+======================
+lv_xml_button_parser.h
+======================
+
+
+.. doxygenfile:: lv_xml_button_parser.h
+    :project: lvgl
+

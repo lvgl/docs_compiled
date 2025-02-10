@@ -1,0 +1,10 @@
+.. _lv_image_dsc:
+
+==============
+lv_image_dsc.h
+==============
+
+
+.. doxygenfile:: lv_image_dsc.h
+    :project: lvgl
+

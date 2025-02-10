@@ -1,0 +1,10 @@
+.. _lv_draw_vg_lite_h:
+
+=================
+lv_draw_vg_lite.h
+=================
+
+
+.. doxygenfile:: lv_draw_vg_lite.h
+    :project: lvgl
+

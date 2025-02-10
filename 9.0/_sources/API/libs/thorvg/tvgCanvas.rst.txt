@@ -1,0 +1,10 @@
+.. _tvgCanvas:
+
+===========
+tvgCanvas.h
+===========
+
+
+.. doxygenfile:: tvgCanvas.h
+    :project: lvgl
+

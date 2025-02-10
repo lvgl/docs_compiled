@@ -1,0 +1,10 @@
+.. _ascii_h:
+
+=======
+ascii.h
+=======
+
+
+.. doxygenfile:: ascii.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_ili9341:
+
+============
+lv_ili9341.h
+============
+
+
+.. doxygenfile:: lv_ili9341.h
+    :project: lvgl
+

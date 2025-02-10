@@ -1,0 +1,10 @@
+.. _istreamwrapper:
+
+================
+istreamwrapper.h
+================
+
+
+.. doxygenfile:: istreamwrapper.h
+    :project: lvgl
+

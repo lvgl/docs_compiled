@@ -1,0 +1,26 @@
+====
+draw
+====
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_draw_triangle
+    lv_draw_arc
+    lv_draw_rect
+    lv_draw_image
+    lv_draw_buf
+    lv_image_decoder
+    lv_image_dsc
+    lv_draw_vector
+    lv_draw
+    lv_draw_label
+    lv_draw_mask
+    lv_draw_line
+    renesas/index
+    sdl/index
+    vg_lite/index
+    sw/index
+    nxp/index
+

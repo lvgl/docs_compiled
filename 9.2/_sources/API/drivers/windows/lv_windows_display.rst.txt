@@ -1,0 +1,10 @@
+.. _lv_windows_display:
+
+====================
+lv_windows_display.h
+====================
+
+
+.. doxygenfile:: lv_windows_display.h
+    :project: lvgl
+

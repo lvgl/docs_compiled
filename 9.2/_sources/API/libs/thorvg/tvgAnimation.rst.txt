@@ -1,0 +1,10 @@
+.. _tvgAnimation:
+
+==============
+tvgAnimation.h
+==============
+
+
+.. doxygenfile:: tvgAnimation.h
+    :project: lvgl
+

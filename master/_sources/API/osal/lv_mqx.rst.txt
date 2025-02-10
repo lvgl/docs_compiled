@@ -1,0 +1,10 @@
+.. _lv_mqx_h:
+
+========
+lv_mqx.h
+========
+
+
+.. doxygenfile:: lv_mqx.h
+    :project: lvgl
+

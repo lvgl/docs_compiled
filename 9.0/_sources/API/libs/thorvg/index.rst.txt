@@ -1,0 +1,45 @@
+======
+thorvg
+======
+
+
+.. toctree::
+    :maxdepth: 2
+
+    tvgLoadModule
+    tvgTaskScheduler
+    tvgSvgSceneBuilder
+    tvgCanvas
+    tvgRawLoader
+    config
+    tvgSwRasterTexmap
+    tvgXmlParser
+    thorvg
+    tvgSwCommon
+    tvgStr
+    tvgSaveModule
+    tvgLoader
+    tvgIteratorAccessor
+    tvgPicture
+    tvgFill
+    tvgCommon
+    tvgPaint
+    tvgSwRasterAvx
+    tvgFrameModule
+    tvgSvgUtil
+    tvgArray
+    tvgSwRasterC
+    tvgScene
+    tvgCompressor
+    tvgSvgCssStyle
+    tvgRender
+    tvgShape
+    tvgSwRenderer
+    tvgSvgLoader
+    tvgSwRasterNeon
+    tvgMath
+    tvgSvgLoaderCommon
+    tvgBezier
+    tvgSvgPath
+    thorvg_capi
+

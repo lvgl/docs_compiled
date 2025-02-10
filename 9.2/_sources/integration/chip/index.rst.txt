@@ -1,0 +1,13 @@
+:link_to_translation:`zh_CN:[中文]`	
+
+============
+Chip vendors
+============
+
+.. toctree::
+    :maxdepth: 2
+
+    espressif
+    nxp
+    renesas
+    stm32

@@ -1,0 +1,10 @@
+.. _cursorstreamwrapper_h:
+
+=====================
+cursorstreamwrapper.h
+=====================
+
+
+.. doxygenfile:: cursorstreamwrapper.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _tvgSwRasterAvx_h:
+
+================
+tvgSwRasterAvx.h
+================
+
+
+.. doxygenfile:: tvgSwRasterAvx.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_vg_lite_stroke_h:
+
+===================
+lv_vg_lite_stroke.h
+===================
+
+
+.. doxygenfile:: lv_vg_lite_stroke.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _prettywriter:
+
+==============
+prettywriter.h
+==============
+
+
+.. doxygenfile:: prettywriter.h
+    :project: lvgl
+

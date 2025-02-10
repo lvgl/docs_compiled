@@ -1,0 +1,16 @@
+:link_to_translation:`zh_CN:[中文]`	
+
+=================
+Software renderer
+=================
+
+API
+---
+
+:ref:`lv_draw_sw`
+
+:ref:`lv_draw_sw_blend`
+
+:ref:`lv_draw_sw_dither`
+
+:ref:`lv_draw_sw_gradient`

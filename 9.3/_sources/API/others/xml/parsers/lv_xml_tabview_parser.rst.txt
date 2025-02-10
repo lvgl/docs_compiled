@@ -1,0 +1,10 @@
+.. _lv_xml_tabview_parser_h:
+
+=======================
+lv_xml_tabview_parser.h
+=======================
+
+
+.. doxygenfile:: lv_xml_tabview_parser.h
+    :project: lvgl
+

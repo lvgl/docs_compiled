@@ -1,0 +1,11 @@
+========
+property
+========
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_obj_property_names
+    lv_style_properties
+

@@ -1,0 +1,10 @@
+.. _lv_style_properties_h:
+
+=====================
+lv_style_properties.h
+=====================
+
+
+.. doxygenfile:: lv_style_properties.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _encodedstream_h:
+
+===============
+encodedstream.h
+===============
+
+
+.. doxygenfile:: encodedstream.h
+    :project: lvgl
+

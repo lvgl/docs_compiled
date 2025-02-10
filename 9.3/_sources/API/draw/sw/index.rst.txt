@@ -1,0 +1,15 @@
+==
+sw
+==
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_draw_sw_gradient
+    lv_draw_sw
+    lv_draw_sw_utils
+    lv_draw_sw_mask
+    blend/index
+    arm2d/index
+

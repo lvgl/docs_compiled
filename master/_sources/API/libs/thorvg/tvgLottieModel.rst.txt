@@ -1,0 +1,10 @@
+.. _tvgLottieModel_h:
+
+================
+tvgLottieModel.h
+================
+
+
+.. doxygenfile:: tvgLottieModel.h
+    :project: lvgl
+

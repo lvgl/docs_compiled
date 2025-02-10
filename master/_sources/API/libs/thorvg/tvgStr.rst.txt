@@ -1,0 +1,10 @@
+.. _tvgStr_h:
+
+========
+tvgStr.h
+========
+
+
+.. doxygenfile:: tvgStr.h
+    :project: lvgl
+

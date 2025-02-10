@@ -1,0 +1,10 @@
+.. _lv_slider_h:
+
+===========
+lv_slider.h
+===========
+
+
+.. doxygenfile:: lv_slider.h
+    :project: lvgl
+

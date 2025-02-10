@@ -1,0 +1,10 @@
+.. _tvgLottieInterpolator_h:
+
+=======================
+tvgLottieInterpolator.h
+=======================
+
+
+.. doxygenfile:: tvgLottieInterpolator.h
+    :project: lvgl
+

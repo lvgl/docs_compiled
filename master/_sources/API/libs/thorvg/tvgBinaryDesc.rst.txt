@@ -1,0 +1,10 @@
+.. _tvgBinaryDesc_h:
+
+===============
+tvgBinaryDesc.h
+===============
+
+
+.. doxygenfile:: tvgBinaryDesc.h
+    :project: lvgl
+

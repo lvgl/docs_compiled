@@ -1,0 +1,30 @@
+lvgl/CMakeFiles/lvgl.dir/src/drivers/evdev/lv_evdev.c.o: \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/lv_evdev.c \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/lv_evdev.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/lv_indev.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/lv_group.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../lv_conf_kconfig.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lv_conf.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_types.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdint.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/stdint.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stddef.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdbool.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/inttypes.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/features.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/limits.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/limits.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/stdarg.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdarg.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_ll.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../misc/lv_area.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_math.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../misc/lv_timer.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/../tick/lv_tick.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/../tick/../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/../tick/../misc/lv_types.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../misc/lv_event.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/drivers/evdev/../../indev/../core/../misc/lv_array.h

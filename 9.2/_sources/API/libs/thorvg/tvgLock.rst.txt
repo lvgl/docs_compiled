@@ -1,0 +1,10 @@
+.. _tvgLock:
+
+=========
+tvgLock.h
+=========
+
+
+.. doxygenfile:: tvgLock.h
+    :project: lvgl
+

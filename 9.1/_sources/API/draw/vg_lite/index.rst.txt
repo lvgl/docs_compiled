@@ -1,0 +1,17 @@
+=======
+vg_lite
+=======
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_vg_lite_grad
+    lv_draw_vg_lite_type
+    lv_vg_lite_path
+    lv_vg_lite_math
+    lv_draw_vg_lite
+    lv_vg_lite_pending
+    lv_vg_lite_utils
+    lv_vg_lite_decoder
+

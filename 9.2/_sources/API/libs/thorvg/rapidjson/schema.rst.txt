@@ -1,0 +1,10 @@
+.. _schema:
+
+========
+schema.h
+========
+
+
+.. doxygenfile:: schema.h
+    :project: lvgl
+

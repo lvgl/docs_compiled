@@ -1,0 +1,10 @@
+.. _lz4_h:
+
+=====
+lz4.h
+=====
+
+
+.. doxygenfile:: lz4.h
+    :project: lvgl
+

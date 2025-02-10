@@ -1,0 +1,10 @@
+.. _lv_uefi_h:
+
+=========
+lv_uefi.h
+=========
+
+
+.. doxygenfile:: lv_uefi.h
+    :project: lvgl
+

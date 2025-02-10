@@ -1,0 +1,19 @@
+=====
+blend
+=====
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_draw_sw_blend_to_argb8888
+    lv_draw_sw_blend_to_l8
+    lv_draw_sw_blend_to_i1
+    lv_draw_sw_blend_to_rgb565
+    lv_draw_sw_blend
+    lv_draw_sw_blend_to_rgb888
+    lv_draw_sw_blend_to_al88
+    neon/index
+    helium/index
+    arm2d/index
+

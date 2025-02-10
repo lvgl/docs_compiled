@@ -1,0 +1,10 @@
+.. _writer:
+
+========
+writer.h
+========
+
+
+.. doxygenfile:: writer.h
+    :project: lvgl
+

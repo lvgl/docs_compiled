@@ -1,0 +1,10 @@
+.. _tvgText:
+
+=========
+tvgText.h
+=========
+
+
+.. doxygenfile:: tvgText.h
+    :project: lvgl
+

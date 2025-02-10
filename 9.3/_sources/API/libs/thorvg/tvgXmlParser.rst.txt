@@ -1,0 +1,10 @@
+.. _tvgXmlParser_h:
+
+==============
+tvgXmlParser.h
+==============
+
+
+.. doxygenfile:: tvgXmlParser.h
+    :project: lvgl
+

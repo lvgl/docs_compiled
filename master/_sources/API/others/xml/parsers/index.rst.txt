@@ -1,0 +1,23 @@
+=======
+parsers
+=======
+
+
+.. toctree::
+    :maxdepth: 2
+
+    lv_xml_event_parser
+    lv_xml_dropdown_parser
+    lv_xml_chart_parser
+    lv_xml_slider_parser
+    lv_xml_tabview_parser
+    lv_xml_image_parser
+    lv_xml_obj_parser
+    lv_xml_spangroup_parser
+    lv_xml_button_parser
+    lv_xml_table_parser
+    lv_xml_roller_parser
+    lv_xml_scale_parser
+    lv_xml_label_parser
+    lv_xml_bar_parser
+

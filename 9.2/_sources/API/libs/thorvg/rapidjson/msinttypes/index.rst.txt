@@ -1,0 +1,11 @@
+==========
+msinttypes
+==========
+
+
+.. toctree::
+    :maxdepth: 2
+
+    inttypes
+    stdint
+

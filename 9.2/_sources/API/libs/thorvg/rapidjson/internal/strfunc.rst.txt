@@ -1,0 +1,10 @@
+.. _strfunc:
+
+=========
+strfunc.h
+=========
+
+
+.. doxygenfile:: strfunc.h
+    :project: lvgl
+

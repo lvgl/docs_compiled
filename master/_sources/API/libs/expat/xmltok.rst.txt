@@ -1,0 +1,10 @@
+.. _xmltok_h:
+
+========
+xmltok.h
+========
+
+
+.. doxygenfile:: xmltok.h
+    :project: lvgl
+

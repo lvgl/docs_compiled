@@ -1,0 +1,31 @@
+lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmltok.c.o: \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok.c \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/../../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/../../lv_conf_kconfig.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lv_conf.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat_config.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stddef.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/string.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/string.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/features.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/strings.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdbool.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat_external.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/internal.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/limits.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/limits.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/alloca.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/nametab.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok_impl.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/ascii.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok_impl.c \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/asciitab.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/utf8tab.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/iasciitab.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/latin1tab.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok_ns.c

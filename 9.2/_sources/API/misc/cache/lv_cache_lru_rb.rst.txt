@@ -1,0 +1,10 @@
+.. _lv_cache_lru_rb:
+
+=================
+lv_cache_lru_rb.h
+=================
+
+
+.. doxygenfile:: lv_cache_lru_rb.h
+    :project: lvgl
+

@@ -1,0 +1,20 @@
+lvgl/CMakeFiles/lvgl.dir/src/libs/expat/xmlrole.c.o: \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmlrole.c \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/../../lv_conf_internal.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/../../lv_conf_kconfig.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lv_conf.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat_config.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stddef.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/alltypes.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat_external.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/internal.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/limits.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/features.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/lib/libc/musl/arch/emscripten/bits/limits.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/expat.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/compat/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/stdlib.h \
+  /home/runner/work/lvgl/lvgl/emsdk-cache/emsdk-main/upstream/emscripten/system/include/libc/alloca.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmlrole.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/xmltok.h \
+  /home/runner/work/lvgl/lvgl/emscripten_builder/lvgl/src/libs/expat/ascii.h

@@ -1,0 +1,10 @@
+.. _lv_bin_decoder_h:
+
+================
+lv_bin_decoder.h
+================
+
+
+.. doxygenfile:: lv_bin_decoder.h
+    :project: lvgl
+

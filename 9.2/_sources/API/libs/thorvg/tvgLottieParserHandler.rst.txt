@@ -1,0 +1,10 @@
+.. _tvgLottieParserHandler:
+
+========================
+tvgLottieParserHandler.h
+========================
+
+
+.. doxygenfile:: tvgLottieParserHandler.h
+    :project: lvgl
+

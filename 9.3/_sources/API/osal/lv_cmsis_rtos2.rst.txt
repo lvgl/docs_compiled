@@ -1,0 +1,10 @@
+.. _lv_cmsis_rtos2_h:
+
+================
+lv_cmsis_rtos2.h
+================
+
+
+.. doxygenfile:: lv_cmsis_rtos2.h
+    :project: lvgl
+

@@ -1,0 +1,10 @@
+.. _lv_opengles_debug:
+
+===================
+lv_opengles_debug.h
+===================
+
+
+.. doxygenfile:: lv_opengles_debug.h
+    :project: lvgl
+

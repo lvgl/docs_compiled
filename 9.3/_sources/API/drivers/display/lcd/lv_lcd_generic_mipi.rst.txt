@@ -1,0 +1,10 @@
+.. _lv_lcd_generic_mipi_h:
+
+=====================
+lv_lcd_generic_mipi.h
+=====================
+
+
+.. doxygenfile:: lv_lcd_generic_mipi.h
+    :project: lvgl
+
